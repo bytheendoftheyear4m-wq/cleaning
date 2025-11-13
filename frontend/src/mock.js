@@ -83,7 +83,7 @@ export const testimonials = [
     name: 'Sarah Johnson',
     location: 'Calgary, AB',
     rating: 5,
-    text: 'Pure Gold Solutions transformed my car! The attention to detail was incredible. They came to my home and did an amazing job. Highly recommend!',
+    text: 'Pure Gold Solutions cleaned our home and car after our big party. Both services were exceptional! The attention to detail was incredible. Highly recommend!',
     date: '2025-01-15'
   },
   {
@@ -91,7 +91,7 @@ export const testimonials = [
     name: 'Michael Chen',
     location: 'Calgary, AB',
     rating: 5,
-    text: 'Best car detailing service in Calgary. Professional, punctual, and my car looks brand new. The mobile service is so convenient!',
+    text: 'Used them for move-in cleaning and car detailing. Professional, punctual, and everything looks brand new. The mobile service is so convenient!',
     date: '2025-01-10'
   },
   {
@@ -99,8 +99,16 @@ export const testimonials = [
     name: 'Emily Rodriguez',
     location: 'Calgary, AB',
     rating: 5,
-    text: 'Exceptional service! They detailed my SUV inside and out. The team was friendly and the results exceeded my expectations.',
+    text: 'They handle our office contract cleaning and company vehicles. The team is friendly, reliable, and the results always exceed expectations.',
     date: '2025-01-05'
+  },
+  {
+    id: '4',
+    name: 'David Thompson',
+    location: 'Calgary, AB',
+    rating: 5,
+    text: 'Best cleaning service in Calgary! They cleaned my new home top to bottom and detailed my truck. One-stop solution for all cleaning needs!',
+    date: '2025-01-02'
   }
 ];
 
