@@ -168,7 +168,7 @@ async def get_booking(booking_id: str):
         raise HTTPException(status_code=500, detail="Failed to fetch booking")
 
 @api_router.put("/bookings/{booking_id}/status")
-async def update_booking_status(booking_id: str, status: str):
+async def update_booking_status(booking_id: str, status_update: StatusUpdate):
     """Update booking status"""
     try:
         valid_statuses = ['pending', 'confirmed', 'in_progress', 'completed', 'cancelled']
