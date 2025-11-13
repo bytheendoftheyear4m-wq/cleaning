@@ -18,6 +18,7 @@ const API = `${BACKEND_URL}/api`;
 
 const BookingForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,7 +31,7 @@ const BookingForm = () => {
     notes: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Validate required fields
@@ -43,29 +44,47 @@ const BookingForm = () => {
       return;
     }
 
-    // Save booking to localStorage (mock)
-    const booking = saveBooking({
-      ...formData,
-      date: formData.date ? format(formData.date, 'yyyy-MM-dd') : ''
-    });
+    setIsSubmitting(true);
 
-    toast({
-      title: 'Booking Confirmed!',
-      description: `Your appointment has been scheduled for ${format(formData.date, 'PPP')} at ${formData.time}. We'll contact you shortly to confirm.`,
-    });
+    try {
+      // Submit booking to backend API
+      const bookingData = {
+        ...formData,
+        date: formData.date ? format(formData.date, 'yyyy-MM-dd') : '',
+        date: undefined
+      };
+      delete bookingData.date; // Remove undefined date field
+      bookingData.date = format(formData.date, 'yyyy-MM-dd'); // Add formatted date
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      service: '',
-      vehicleType: '',
-      date: undefined,
-      time: '',
-      notes: ''
-    });
+      const response = await axios.post(`${API}/bookings`, bookingData);
+
+      toast({
+        title: 'Booking Confirmed!',
+        description: `Your appointment has been scheduled for ${format(formData.date, 'PPP')} at ${formData.time}. Booking ID: ${response.data.bookingId}. We'll contact you shortly to confirm.`,
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        service: '',
+        vehicleType: '',
+        date: undefined,
+        time: '',
+        notes: ''
+      });
+    } catch (error) {
+      console.error('Booking error:', error);
+      toast({
+        title: 'Booking Failed',
+        description: error.response?.data?.detail || 'Failed to submit booking. Please try again or call us directly at (403) 555-0123.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
