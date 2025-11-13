@@ -9,8 +9,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Calendar as CalendarComponent } from './ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { useToast } from '../hooks/use-toast';
-import { services, vehicleTypes, timeSlots, saveBooking } from '../mock';
+import { services, vehicleTypes, timeSlots } from '../mock';
 import { format } from 'date-fns';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const BookingForm = () => {
   const { toast } = useToast();
