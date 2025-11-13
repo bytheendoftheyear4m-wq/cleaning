@@ -276,9 +276,10 @@ const BookingForm = () => {
                 {/* Submit Button */}
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white text-lg py-6"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white text-lg py-6 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Confirm Booking
+                  {isSubmitting ? 'Submitting...' : 'Confirm Booking'}
                 </Button>
 
                 <p className="text-sm text-gray-600 text-center">
