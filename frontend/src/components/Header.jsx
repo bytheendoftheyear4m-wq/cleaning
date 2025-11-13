@@ -30,16 +30,16 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Services
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               About
             </button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+            <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Testimonials
             </button>
-            <button onClick={() => scrollToSection('booking')} className="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+            <button onClick={() => scrollToSection('booking')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Contact
             </button>
           </nav>
