@@ -44,7 +44,7 @@ export const services = [
     category: 'home',
     title: 'Home Cleaning',
     description: 'Regular or deep cleaning for your home with professional equipment and eco-friendly products.',
-    price: 'From $89',
+    price: 'From $149',
     features: ['All Rooms Cleaning', 'Kitchen & Bathrooms', 'Dusting & Vacuuming', 'Floor Mopping', 'Window Cleaning'],
     image: 'https://images.unsplash.com/photo-1686178827149-6d55c72d81df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwxfHxob21lJTIwY2xlYW5pbmd8ZW58MHx8fHwxNzYzMDExMDM0fDA&ixlib=rb-4.1.0&q=85'
   },
@@ -53,7 +53,7 @@ export const services = [
     category: 'home',
     title: 'Event Cleaning',
     description: 'Pre and post-event cleaning services for parties, gatherings, and special occasions.',
-    price: 'From $199',
+    price: 'From $299',
     features: ['Pre-Event Setup Clean', 'Post-Event Cleanup', 'Floor & Surface Cleaning', 'Trash Removal', 'Full Restoration'],
     image: 'https://images.unsplash.com/photo-1747659354528-b534bcd71aea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxjbGVhbmluZyUyMGVxdWlwbWVudHxlbnwwfHx8fDE3NjMwMTEwMzl8MA&ixlib=rb-4.1.0&q=85'
   },
@@ -71,7 +71,7 @@ export const services = [
     category: 'home',
     title: 'New Home Cleaning',
     description: 'Move-in/move-out deep cleaning to make your new space spotless and ready.',
-    price: 'From $249',
+    price: 'From $349',
     features: ['Deep Clean All Areas', 'Cabinet Interior Clean', 'Appliance Cleaning', 'Baseboard & Trim', 'Window & Sill Cleaning'],
     image: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg'
   }
