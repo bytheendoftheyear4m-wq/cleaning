@@ -23,10 +23,10 @@ button, a, input, select, textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #f59e0b;
+    background: #2563eb;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #d97706;
+    background: #1d4ed8;
 }
