@@ -17,7 +17,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              Calgary's premier mobile car wash and detailing service. Bringing professional care to your doorstep.
+              Calgary's premier mobile cleaning service for cars and homes. Bringing professional care to your doorstep.
             </p>
           </div>
 
