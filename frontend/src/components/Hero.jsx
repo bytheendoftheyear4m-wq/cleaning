@@ -29,18 +29,18 @@ const Hero = () => {
         <div className="max-w-3xl">
           <div className="inline-flex items-center space-x-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 rounded-full px-4 py-2 mb-6">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-amber-100 text-sm font-medium">Calgary's #1 Mobile Car Detailing</span>
+            <span className="text-amber-100 text-sm font-medium">Calgary's #1 Mobile Cleaning Service</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Premium Car Care
+            Premium Cleaning
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500">
-              At Your Doorstep
+              For Cars & Homes
             </span>
           </h1>
           
           <p className="text-xl text-gray-200 mb-8 max-w-2xl">
-            Experience professional car washing and detailing services delivered to your location in Calgary. We bring showroom shine to your driveway.
+            Professional car detailing, home cleaning, event services, and contract cleaning delivered to your location in Calgary. We bring excellence to your doorstep.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
