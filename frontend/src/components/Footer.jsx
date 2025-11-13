@@ -52,10 +52,10 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-amber-400 transition-colors">Exterior Wash & Wax</li>
-              <li className="hover:text-amber-400 transition-colors">Interior Detailing</li>
-              <li className="hover:text-amber-400 transition-colors">Premium Full Detail</li>
-              <li className="hover:text-amber-400 transition-colors">Engine Bay Cleaning</li>
+              <li className="hover:text-amber-400 transition-colors">Car Detailing</li>
+              <li className="hover:text-amber-400 transition-colors">Home Cleaning</li>
+              <li className="hover:text-amber-400 transition-colors">Event Cleaning</li>
+              <li className="hover:text-amber-400 transition-colors">Contract Cleaning</li>
             </ul>
           </div>
 
