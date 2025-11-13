@@ -74,7 +74,7 @@ const BookingForm = () => {
               Book Your Service
             </h2>
             <p className="text-xl text-gray-600">
-              Schedule your mobile car detailing service in Calgary
+              Schedule your car detailing or home cleaning service in Calgary
             </p>
           </div>
 
