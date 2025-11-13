@@ -24,7 +24,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">Pure Gold Solutions</h1>
-              <p className="text-xs text-gray-600">Calgary's Premier Car Care</p>
+              <p className="text-xs text-gray-600">Car & Home Cleaning Experts</p>
             </div>
           </div>
 
