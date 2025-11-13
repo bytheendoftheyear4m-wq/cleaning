@@ -79,6 +79,112 @@ async def get_status_checks():
     
     return status_checks
 
+# Booking endpoints
+@api_router.post("/bookings", response_model=Booking)
+async def create_booking(booking_data: BookingCreate):
+    """Create a new booking"""
+    try:
+        # Get service name from service ID
+        service_name = SERVICES.get(booking_data.service, booking_data.service)
+        
+        # Create booking object
+        booking = Booking(
+            **booking_data.model_dump(),
+            serviceName=service_name
+        )
+        
+        # Convert to dict for MongoDB
+        booking_dict = booking.model_dump()
+        booking_dict['createdAt'] = booking_dict['createdAt'].isoformat()
+        booking_dict['updatedAt'] = booking_dict['updatedAt'].isoformat()
+        
+        # Insert into database
+        result = await db.bookings.insert_one(booking_dict)
+        
+        if not result.inserted_id:
+            raise HTTPException(status_code=500, detail="Failed to create booking")
+        
+        # Send emails (non-blocking)
+        try:
+            await email_service.send_customer_confirmation(booking_dict)
+            await email_service.send_business_notification(booking_dict)
+        except Exception as e:
+            logger.error(f"Failed to send emails for booking {booking.bookingId}: {str(e)}")
+        
+        return booking
+        
+    except Exception as e:
+        logger.error(f"Error creating booking: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to create booking")
+
+@api_router.get("/bookings", response_model=List[Booking])
+async def get_bookings():
+    """Get all bookings"""
+    try:
+        bookings = await db.bookings.find({}, {"_id": 0}).to_list(1000)
+        
+        # Convert ISO string timestamps back to datetime objects
+        for booking in bookings:
+            if isinstance(booking.get('createdAt'), str):
+                booking['createdAt'] = datetime.fromisoformat(booking['createdAt'])
+            if isinstance(booking.get('updatedAt'), str):
+                booking['updatedAt'] = datetime.fromisoformat(booking['updatedAt'])
+        
+        return bookings
+    except Exception as e:
+        logger.error(f"Error fetching bookings: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch bookings")
+
+@api_router.get("/bookings/{booking_id}", response_model=Booking)
+async def get_booking(booking_id: str):
+    """Get a specific booking by ID"""
+    try:
+        booking = await db.bookings.find_one({"bookingId": booking_id}, {"_id": 0})
+        
+        if not booking:
+            raise HTTPException(status_code=404, detail="Booking not found")
+        
+        # Convert ISO string timestamps back to datetime objects
+        if isinstance(booking.get('createdAt'), str):
+            booking['createdAt'] = datetime.fromisoformat(booking['createdAt'])
+        if isinstance(booking.get('updatedAt'), str):
+            booking['updatedAt'] = datetime.fromisoformat(booking['updatedAt'])
+        
+        return booking
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error fetching booking {booking_id}: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch booking")
+
+@api_router.put("/bookings/{booking_id}/status")
+async def update_booking_status(booking_id: str, status: str):
+    """Update booking status"""
+    try:
+        valid_statuses = ['pending', 'confirmed', 'in_progress', 'completed', 'cancelled']
+        if status not in valid_statuses:
+            raise HTTPException(status_code=400, detail=f"Invalid status. Must be one of: {valid_statuses}")
+        
+        result = await db.bookings.update_one(
+            {"bookingId": booking_id},
+            {
+                "$set": {
+                    "status": status,
+                    "updatedAt": datetime.now(timezone.utc).isoformat()
+                }
+            }
+        )
+        
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Booking not found")
+        
+        return {"message": "Status updated successfully", "status": status}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error updating booking status {booking_id}: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update booking status")
+
 # Include the router in the main app
 app.include_router(api_router)
 
