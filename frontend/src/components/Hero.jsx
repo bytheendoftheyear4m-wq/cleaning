@@ -67,14 +67,14 @@ const Hero = () => {
               <CheckCircle2 className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="text-white font-semibold mb-1">Mobile Service</h3>
-                <p className="text-gray-300 text-sm">We come to your home or office</p>
+                <p className="text-gray-300 text-sm">Cars, homes & events - we come to you</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <CheckCircle2 className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-white font-semibold mb-1">Eco-Friendly</h3>
-                <p className="text-gray-300 text-sm">Premium biodegradable products</p>
+                <h3 className="text-white font-semibold mb-1">Full Service</h3>
+                <p className="text-gray-300 text-sm">Car detailing & property cleaning</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
