@@ -57,6 +57,9 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+class StatusUpdate(BaseModel):
+    status: str
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
