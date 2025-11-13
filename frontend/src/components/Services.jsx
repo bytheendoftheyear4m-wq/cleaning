@@ -77,42 +77,43 @@ const Services = () => {
           <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Home & Property Cleaning</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {homeServices.map((service) => (
-            <Card key={service.id} className="group hover:shadow-2xl transition-all duration-300 border-0 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <span className="text-2xl font-bold text-white">{service.price}</span>
+              <Card key={service.id} className="group hover:shadow-2xl transition-all duration-300 border-0 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <span className="text-2xl font-bold text-white">{service.price}</span>
+                  </div>
                 </div>
-              </div>
-              
-              <CardHeader>
-                <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
-                <CardDescription className="text-gray-600">{service.description}</CardDescription>
-              </CardHeader>
-              
-              <CardContent>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, index) => (
-                    <li key={index} className="flex items-center space-x-2 text-sm text-gray-700">
-                      <Check className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button 
-                  onClick={scrollToBooking}
-                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white"
-                >
-                  Select Service
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                
+                <CardHeader>
+                  <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
+                  <CardDescription className="text-gray-600">{service.description}</CardDescription>
+                </CardHeader>
+                
+                <CardContent>
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, index) => (
+                      <li key={index} className="flex items-center space-x-2 text-sm text-gray-700">
+                        <Check className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    onClick={scrollToBooking}
+                    className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white"
+                  >
+                    Select Service
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
