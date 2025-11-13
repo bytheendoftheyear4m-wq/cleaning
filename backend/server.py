@@ -27,6 +27,17 @@ app = FastAPI()
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+# Services data (matching frontend)
+SERVICES = {
+    '1': 'Exterior Wash & Wax',
+    '2': 'Interior Detailing',
+    '3': 'Premium Full Detail',
+    '4': 'Engine Bay Cleaning',
+    '5': 'Home Cleaning',
+    '6': 'Event Cleaning',
+    '7': 'Contract Cleaning',
+    '8': 'New Home Cleaning'
+}
 
 # Define Models
 class StatusCheck(BaseModel):
