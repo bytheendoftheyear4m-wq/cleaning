@@ -102,9 +102,9 @@ const BookingForm = () => {
           </div>
 
           <Card className="border-0 shadow-2xl">
-            <CardHeader className="bg-gradient-to-r from-amber-500 to-yellow-600 text-white">
+            <CardHeader className="bg-gradient-to-r from-blue-500 to-sky-600 text-white">
               <CardTitle className="text-2xl">Service Booking</CardTitle>
-              <CardDescription className="text-amber-50">
+              <CardDescription className="text-blue-50">
                 Fill out the form below and we'll confirm your appointment
               </CardDescription>
             </CardHeader>
@@ -114,7 +114,7 @@ const BookingForm = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="flex items-center space-x-2">
-                      <User className="w-4 h-4 text-amber-600" />
+                      <User className="w-4 h-4 text-blue-600" />
                       <span>Full Name *</span>
                     </Label>
                     <Input
@@ -128,7 +128,7 @@ const BookingForm = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="flex items-center space-x-2">
-                      <Phone className="w-4 h-4 text-amber-600" />
+                      <Phone className="w-4 h-4 text-blue-600" />
                       <span>Phone Number *</span>
                     </Label>
                     <Input
@@ -144,7 +144,7 @@ const BookingForm = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="email" className="flex items-center space-x-2">
-                    <Mail className="w-4 h-4 text-amber-600" />
+                    <Mail className="w-4 h-4 text-blue-600" />
                     <span>Email Address</span>
                   </Label>
                   <Input
@@ -158,7 +158,7 @@ const BookingForm = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="address" className="flex items-center space-x-2">
-                    <MapPin className="w-4 h-4 text-amber-600" />
+                    <MapPin className="w-4 h-4 text-blue-600" />
                     <span>Service Address in Calgary *</span>
                   </Label>
                   <Input
@@ -174,7 +174,7 @@ const BookingForm = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="service" className="flex items-center space-x-2">
-                      <Car className="w-4 h-4 text-amber-600" />
+                      <Car className="w-4 h-4 text-blue-600" />
                       <span>Select Service *</span>
                     </Label>
                     <Select value={formData.service} onValueChange={(value) => setFormData({ ...formData, service: value })}>
@@ -193,7 +193,7 @@ const BookingForm = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="vehicleType" className="flex items-center space-x-2">
-                      <Car className="w-4 h-4 text-amber-600" />
+                      <Car className="w-4 h-4 text-blue-600" />
                       <span>Vehicle Type</span>
                     </Label>
                     <Select value={formData.vehicleType} onValueChange={(value) => setFormData({ ...formData, vehicleType: value })}>
@@ -215,7 +215,7 @@ const BookingForm = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label className="flex items-center space-x-2">
-                      <Calendar className="w-4 h-4 text-amber-600" />
+                      <Calendar className="w-4 h-4 text-blue-600" />
                       <span>Preferred Date *</span>
                     </Label>
                     <Popover>
@@ -240,7 +240,7 @@ const BookingForm = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="time" className="flex items-center space-x-2">
-                      <Clock className="w-4 h-4 text-amber-600" />
+                      <Clock className="w-4 h-4 text-blue-600" />
                       <span>Preferred Time *</span>
                     </Label>
                     <Select value={formData.time} onValueChange={(value) => setFormData({ ...formData, time: value })}>
@@ -261,7 +261,7 @@ const BookingForm = () => {
                 {/* Additional Notes */}
                 <div className="space-y-2">
                   <Label htmlFor="notes" className="flex items-center space-x-2">
-                    <MessageSquare className="w-4 h-4 text-amber-600" />
+                    <MessageSquare className="w-4 h-4 text-blue-600" />
                     <span>Additional Notes</span>
                   </Label>
                   <Textarea
@@ -277,7 +277,7 @@ const BookingForm = () => {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white text-lg py-6 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-600 hover:to-sky-700 text-white text-lg py-6 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Submitting...' : 'Confirm Booking'}
                 </Button>

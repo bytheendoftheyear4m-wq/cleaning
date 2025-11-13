@@ -55,14 +55,14 @@ const Services = () => {
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-2 text-sm text-gray-700">
-                        <Check className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-blue-600 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button 
                     onClick={scrollToBooking}
-                    className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white"
+                    className="w-full bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-600 hover:to-sky-700 text-white"
                   >
                     Select Service
                   </Button>
@@ -99,14 +99,14 @@ const Services = () => {
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-2 text-sm text-gray-700">
-                        <Check className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-blue-600 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button 
                     onClick={scrollToBooking}
-                    className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white"
+                    className="w-full bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-600 hover:to-sky-700 text-white"
                   >
                     Select Service
                   </Button>

@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-yellow-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-sky-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">PG</span>
               </div>
               <div>
@@ -26,22 +26,22 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-amber-400 transition-colors">
+                <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-blue-400 transition-colors">
                   Our Services
                 </button>
               </li>
               <li>
-                <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-amber-400 transition-colors">
+                <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-blue-400 transition-colors">
                   About Us
                 </button>
               </li>
               <li>
-                <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-amber-400 transition-colors">
+                <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-blue-400 transition-colors">
                   Testimonials
                 </button>
               </li>
               <li>
-                <button onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-amber-400 transition-colors">
+                <button onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-blue-400 transition-colors">
                   Book Now
                 </button>
               </li>
@@ -52,10 +52,10 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-amber-400 transition-colors">Car Detailing</li>
-              <li className="hover:text-amber-400 transition-colors">Home Cleaning</li>
-              <li className="hover:text-amber-400 transition-colors">Event Cleaning</li>
-              <li className="hover:text-amber-400 transition-colors">Contract Cleaning</li>
+              <li className="hover:text-blue-400 transition-colors">Car Detailing</li>
+              <li className="hover:text-blue-400 transition-colors">Home Cleaning</li>
+              <li className="hover:text-blue-400 transition-colors">Event Cleaning</li>
+              <li className="hover:text-blue-400 transition-colors">Contract Cleaning</li>
             </ul>
           </div>
 
@@ -64,19 +64,19 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-amber-400" />
+                <MapPin className="w-4 h-4 text-blue-400" />
                 <span>Calgary, Alberta</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-amber-400" />
+                <Phone className="w-4 h-4 text-blue-400" />
                 <span>(403) 555-0123</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-amber-400" />
+                <Mail className="w-4 h-4 text-blue-400" />
                 <span>info@puregoldsolutions.ca</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-amber-400" />
+                <Clock className="w-4 h-4 text-blue-400" />
                 <span>Mon-Sun: 8AM - 6PM</span>
               </li>
             </ul>

@@ -27,21 +27,21 @@ const About = () => {
             
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2" />
+                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2" />
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Professional Excellence</h3>
                   <p className="text-gray-600">Trained technicians with expertise in car detailing and property cleaning</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2" />
+                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2" />
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Complete Solutions</h3>
                   <p className="text-gray-600">From vehicles to homes, events, and contract cleaning – we do it all</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2" />
+                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2" />
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Flexible Scheduling</h3>
                   <p className="text-gray-600">Book a time that works for you – we operate 7 days a week</p>
@@ -57,9 +57,9 @@ const About = () => {
               return (
                 <div 
                   key={index} 
-                  className="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border border-amber-100 hover:shadow-lg transition-shadow"
+                  className="bg-gradient-to-br from-blue-50 to-yellow-50 p-8 rounded-2xl border border-blue-100 hover:shadow-lg transition-shadow"
                 >
-                  <Icon className="w-10 h-10 text-amber-600 mb-4" />
+                  <Icon className="w-10 h-10 text-blue-600 mb-4" />
                   <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
                   <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
                 </div>

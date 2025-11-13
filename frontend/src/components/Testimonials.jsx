@@ -5,7 +5,7 @@ import { testimonials } from '../mock';
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-b from-amber-50 to-white">
+    <section id="testimonials" className="py-24 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -22,12 +22,12 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <Card key={testimonial.id} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8">
-                <Quote className="w-10 h-10 text-amber-400 mb-4" />
+                <Quote className="w-10 h-10 text-blue-400 mb-4" />
                 
                 {/* Rating */}
                 <div className="flex space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="w-5 h-5 fill-blue-400 text-blue-400" />
                   ))}
                 </div>
                 
