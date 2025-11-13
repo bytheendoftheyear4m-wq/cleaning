@@ -1,8 +1,10 @@
-// Mock data for Pure Gold Solutions Car Wash Website
+// Mock data for Pure Gold Solutions - Car & Home Cleaning Services
 
 export const services = [
+  // Car Cleaning Services
   {
     id: '1',
+    category: 'car',
     title: 'Exterior Wash & Wax',
     description: 'Complete exterior cleaning with premium hand wash, foam bath, and protective wax coating.',
     price: 'From $59',
@@ -11,6 +13,7 @@ export const services = [
   },
   {
     id: '2',
+    category: 'car',
     title: 'Interior Detailing',
     description: 'Deep cleaning of interior surfaces, upholstery shampooing, and air freshening.',
     price: 'From $79',
@@ -19,19 +22,58 @@ export const services = [
   },
   {
     id: '3',
+    category: 'car',
     title: 'Premium Full Detail',
     description: 'Complete interior and exterior detailing for showroom-quality results.',
     price: 'From $149',
-    features: ['Full Exterior Detail', 'Complete Interior Detail', 'Engine Bay Cleaning', 'Paint Correction', 'Ceramic Coating Option'],
+    features: ['Full Exterior Detail', 'Complete Interior Detail', 'Engine Bay Cleaning', 'Paint Correction', 'Ceramic Coating'],
     image: 'https://images.unsplash.com/photo-1620584898989-d39f7f9ed1b7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxjYXIlMjBkZXRhaWxpbmd8ZW58MHx8fHwxNzYzMDEwNTIwfDA&ixlib=rb-4.1.0&q=85'
   },
   {
     id: '4',
+    category: 'car',
     title: 'Engine Bay Cleaning',
     description: 'Professional cleaning and degreasing of engine compartment.',
     price: 'From $49',
     features: ['Engine Degreasing', 'Component Cleaning', 'Protective Dressing', 'Detailed Inspection'],
     image: 'https://images.unsplash.com/photo-1761312834150-4beefff097a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjB3YXNofGVufDB8fHx8MTc2MzAxMDQ4MHww&ixlib=rb-4.1.0&q=85'
+  },
+  // Home & Property Cleaning Services
+  {
+    id: '5',
+    category: 'home',
+    title: 'Home Cleaning',
+    description: 'Regular or deep cleaning for your home with professional equipment and eco-friendly products.',
+    price: 'From $89',
+    features: ['All Rooms Cleaning', 'Kitchen & Bathrooms', 'Dusting & Vacuuming', 'Floor Mopping', 'Window Cleaning'],
+    image: 'https://images.unsplash.com/photo-1686178827149-6d55c72d81df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwxfHxob21lJTIwY2xlYW5pbmd8ZW58MHx8fHwxNzYzMDExMDM0fDA&ixlib=rb-4.1.0&q=85'
+  },
+  {
+    id: '6',
+    category: 'home',
+    title: 'Event Cleaning',
+    description: 'Pre and post-event cleaning services for parties, gatherings, and special occasions.',
+    price: 'From $199',
+    features: ['Pre-Event Setup Clean', 'Post-Event Cleanup', 'Floor & Surface Cleaning', 'Trash Removal', 'Full Restoration'],
+    image: 'https://images.unsplash.com/photo-1747659354528-b534bcd71aea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxjbGVhbmluZyUyMGVxdWlwbWVudHxlbnwwfHx8fDE3NjMwMTEwMzl8MA&ixlib=rb-4.1.0&q=85'
+  },
+  {
+    id: '7',
+    category: 'home',
+    title: 'Contract Cleaning',
+    description: 'Ongoing commercial and residential cleaning contracts with flexible scheduling.',
+    price: 'Custom Quote',
+    features: ['Regular Schedule', 'Custom Cleaning Plan', 'Quality Assurance', 'Dedicated Team', 'Flexible Terms'],
+    image: 'https://images.unsplash.com/photo-1758272421751-963195322eaa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHw0fHxjbGVhbmluZyUyMGVxdWlwbWVudHxlbnwwfHx8fDE3NjMwMTEwMzl8MA&ixlib=rb-4.1.0&q=85'
+  },
+  {
+    id: '8',
+    category: 'home',
+    title: 'New Home Cleaning',
+    description: 'Move-in/move-out deep cleaning to make your new space spotless and ready.',
+    price: 'From $249',
+    features: ['Deep Clean All Areas', 'Cabinet Interior Clean', 'Appliance Cleaning', 'Baseboard & Trim', 'Window & Sill Cleaning'],
+    image: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg'
   }
 ];
 
