@@ -172,14 +172,14 @@ async def update_booking_status(booking_id: str, status_update: StatusUpdate):
     """Update booking status"""
     try:
         valid_statuses = ['pending', 'confirmed', 'in_progress', 'completed', 'cancelled']
-        if status not in valid_statuses:
+        if status_update.status not in valid_statuses:
             raise HTTPException(status_code=400, detail=f"Invalid status. Must be one of: {valid_statuses}")
         
         result = await db.bookings.update_one(
             {"bookingId": booking_id},
             {
                 "$set": {
-                    "status": status,
+                    "status": status_update.status,
                     "updatedAt": datetime.now(timezone.utc).isoformat()
                 }
             }
@@ -188,7 +188,7 @@ async def update_booking_status(booking_id: str, status_update: StatusUpdate):
         if result.matched_count == 0:
             raise HTTPException(status_code=404, detail="Booking not found")
         
-        return {"message": "Status updated successfully", "status": status}
+        return {"message": "Status updated successfully", "status": status_update.status}
     except HTTPException:
         raise
     except Exception as e:
