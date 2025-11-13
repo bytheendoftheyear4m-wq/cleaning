@@ -30,14 +30,14 @@ const About = () => {
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2" />
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Professional Excellence</h3>
-                  <p className="text-gray-600">Trained technicians with years of experience in automotive detailing</p>
+                  <p className="text-gray-600">Trained technicians with expertise in car detailing and property cleaning</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Premium Products</h3>
-                  <p className="text-gray-600">We use only eco-friendly, high-quality cleaning and protection products</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Complete Solutions</h3>
+                  <p className="text-gray-600">From vehicles to homes, events, and contract cleaning – we do it all</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
