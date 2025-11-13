@@ -1,0 +1,75 @@
+import React from 'react';
+import { Award, Users, Clock, Shield } from 'lucide-react';
+
+const About = () => {
+  const stats = [
+    { icon: Users, label: 'Happy Clients', value: '500+' },
+    { icon: Clock, label: 'Years Experience', value: '5+' },
+    { icon: Award, label: 'Service Excellence', value: '100%' },
+    { icon: Shield, label: 'Satisfaction Guarantee', value: 'Always' }
+  ];
+
+  return (
+    <section id="about" className="py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Calgary's Most Trusted Mobile Car Detailing
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              At Pure Gold Solutions, we're passionate about delivering exceptional car care services right to your doorstep. Our team of certified professionals uses premium products and proven techniques to make your vehicle shine like new.
+            </p>
+            <p className="text-lg text-gray-600 mb-8">
+              We understand your time is valuable. That's why we bring our professional-grade equipment and expertise directly to your home or office in Calgary. No more waiting at car washes – we work around your schedule.
+            </p>
+            
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2" />
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Professional Excellence</h3>
+                  <p className="text-gray-600">Trained technicians with years of experience in automotive detailing</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2" />
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Premium Products</h3>
+                  <p className="text-gray-600">We use only eco-friendly, high-quality cleaning and protection products</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2" />
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Flexible Scheduling</h3>
+                  <p className="text-gray-600">Book a time that works for you – we operate 7 days a week</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <div 
+                  key={index} 
+                  className="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border border-amber-100 hover:shadow-lg transition-shadow"
+                >
+                  <Icon className="w-10 h-10 text-amber-600 mb-4" />
+                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
