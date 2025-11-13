@@ -71,21 +71,21 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4">
-              <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-amber-600 transition-colors font-medium">
+              <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-blue-600 transition-colors font-medium">
                 Services
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-amber-600 transition-colors font-medium">
+              <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-blue-600 transition-colors font-medium">
                 About
               </button>
-              <button onClick={() => scrollToSection('testimonials')} className="text-left text-gray-700 hover:text-amber-600 transition-colors font-medium">
+              <button onClick={() => scrollToSection('testimonials')} className="text-left text-gray-700 hover:text-blue-600 transition-colors font-medium">
                 Testimonials
               </button>
-              <button onClick={() => scrollToSection('booking')} className="text-left text-gray-700 hover:text-amber-600 transition-colors font-medium">
+              <button onClick={() => scrollToSection('booking')} className="text-left text-gray-700 hover:text-blue-600 transition-colors font-medium">
                 Contact
               </button>
               <Button 
                 onClick={() => scrollToSection('booking')} 
-                className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white w-full"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white w-full"
               >
                 Book Now
               </Button>
