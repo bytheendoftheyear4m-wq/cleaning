@@ -16,13 +16,13 @@ const About = () => {
           {/* Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Calgary's Most Trusted Mobile Car Detailing
+              Calgary's Most Trusted Mobile Cleaning Service
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              At Pure Gold Solutions, we're passionate about delivering exceptional car care services right to your doorstep. Our team of certified professionals uses premium products and proven techniques to make your vehicle shine like new.
+              At Pure Gold Solutions, we're passionate about delivering exceptional cleaning services for both vehicles and properties. Our team of certified professionals uses premium products and proven techniques to make everything shine like new.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              We understand your time is valuable. That's why we bring our professional-grade equipment and expertise directly to your home or office in Calgary. No more waiting at car washes – we work around your schedule.
+              We understand your time is valuable. That's why we bring our professional-grade equipment and expertise directly to your home or office in Calgary. From car detailing to home cleaning, event services, and contract cleaning – we're your one-stop solution.
             </p>
             
             <div className="space-y-4">
