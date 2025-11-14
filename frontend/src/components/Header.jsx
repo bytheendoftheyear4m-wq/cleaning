@@ -19,17 +19,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex items-center">
-              <div className="h-12 w-12 bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">GT</span>
-              </div>
-              <div className="ml-3">
-                <h1 className="text-lg font-bold leading-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Golden Touch</span>
-                </h1>
-                <p className="text-xs text-gray-600 font-medium">Cleaning Services</p>
-              </div>
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/tbkzsfdv_1000237724.jpg" 
+              alt="Golden Touch Cleaning Services"
+              className="h-16 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}
