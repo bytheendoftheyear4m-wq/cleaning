@@ -35,7 +35,7 @@ class EmailService:
 
         try:
             message = MIMEMultipart('alternative')
-            message['From'] = f'Pure Gold Solutions <{self.smtp_user}>'
+            message['From'] = f'Golden Touch Cleaning Services <{self.smtp_user}>'
             message['To'] = to_email
             message['Subject'] = subject
 
@@ -63,7 +63,7 @@ class EmailService:
             logger.info('Customer email not provided, skipping confirmation email')
             return
 
-        subject = '✓ Your Booking is Confirmed - Pure Gold Solutions'
+        subject = '✓ Your Booking is Confirmed - Golden Touch Cleaning Services'
         html_content = f"""
         <html>
         <head>
@@ -74,7 +74,7 @@ class EmailService:
             <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
                 <!-- Header with Logo and Gradient -->
                 <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); padding: 40px 20px; text-align: center; border-radius: 0;">
-                    <img src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" alt="Pure Gold Solutions" style="max-width: 120px; height: auto; margin-bottom: 20px; background: white; padding: 10px; border-radius: 10px;" />
+                    <img src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" alt="Golden Touch Cleaning Services" style="max-width: 120px; height: auto; margin-bottom: 20px; background: white; padding: 10px; border-radius: 10px;" />
                     <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Booking Confirmed!</h1>
                     <p style="color: #bfdbfe; margin: 10px 0 0 0; font-size: 16px;">We're excited to serve you</p>
                 </div>
@@ -84,7 +84,7 @@ class EmailService:
                     <p style="font-size: 18px; color: #1f2937; margin: 0 0 20px 0;">Hi <strong>{booking['name']}</strong>,</p>
                     
                     <p style="font-size: 16px; color: #4b5563; line-height: 1.6; margin: 0 0 30px 0;">
-                        Thank you for choosing <strong>Pure Gold Solutions</strong>! We're thrilled to serve you. Your booking has been confirmed and our team is ready to deliver exceptional service.
+                        Thank you for choosing <strong>Golden Touch Cleaning Services</strong>! We're thrilled to serve you. Your booking has been confirmed and our team is ready to deliver exceptional service.
                     </p>
                     
                     <!-- Customer ID Badge -->
@@ -151,7 +151,7 @@ class EmailService:
                 
                 <!-- Footer -->
                 <div style="background: #1f2937; padding: 30px; text-align: center;">
-                    <p style="color: #9ca3af; margin: 0 0 10px 0; font-size: 14px; font-weight: 600;">Pure Gold Solutions</p>
+                    <p style="color: #9ca3af; margin: 0 0 10px 0; font-size: 14px; font-weight: 600;">Golden Touch Cleaning Services</p>
                     <p style="color: #6b7280; margin: 0; font-size: 13px;">Calgary's Premier Mobile Cleaning Service</p>
                     <p style="color: #6b7280; margin: 15px 0 0 0; font-size: 12px;">Car Detailing • Home Cleaning • Event Services</p>
                 </div>

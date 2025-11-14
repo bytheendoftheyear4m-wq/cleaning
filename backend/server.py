@@ -199,9 +199,9 @@ async def send_custom_message(message_req: MessageRequest):
         <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
             <!-- Header with Logo -->
             <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); padding: 40px 20px; text-align: center;">
-                <img src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" alt="Pure Gold Solutions" style="max-width: 120px; height: auto; margin-bottom: 20px; background: white; padding: 10px; border-radius: 10px;" />
+                <img src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" alt="Golden Touch Cleaning Services" style="max-width: 120px; height: auto; margin-bottom: 20px; background: white; padding: 10px; border-radius: 10px;" />
                 <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">{message_req.subject}</h1>
-                <p style="color: #bfdbfe; margin: 10px 0 0 0; font-size: 16px;">Pure Gold Solutions</p>
+                <p style="color: #bfdbfe; margin: 10px 0 0 0; font-size: 16px;">Golden Touch Cleaning Services</p>
             </div>
             
             <!-- Message Content -->
@@ -230,7 +230,7 @@ async def send_custom_message(message_req: MessageRequest):
             
             <!-- Footer -->
             <div style="background: #1f2937; padding: 30px; text-align: center;">
-                <p style="color: #9ca3af; margin: 0 0 10px 0; font-size: 14px; font-weight: 600;">Pure Gold Solutions</p>
+                <p style="color: #9ca3af; margin: 0 0 10px 0; font-size: 14px; font-weight: 600;">Golden Touch Cleaning Services</p>
                 <p style="color: #6b7280; margin: 0; font-size: 13px;">Calgary's Premier Mobile Cleaning Service</p>
                 <p style="color: #6b7280; margin: 15px 0 0 0; font-size: 12px;">Car Detailing • Home Cleaning • Event Services</p>
             </div>
