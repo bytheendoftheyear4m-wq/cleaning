@@ -27,15 +27,10 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-4 py-2 mb-6">
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-blue-100 text-sm font-medium">Calgary's #1 Mobile Cleaning Service</span>
-          </div>
-          
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-            Premium Cleaning
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-sky-400 drop-shadow-lg">
-              For Cars & Homes
+            Professional Cleaning Services
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 drop-shadow-lg mt-2">
+              For Your Car & Home
             </span>
           </h1>
           
