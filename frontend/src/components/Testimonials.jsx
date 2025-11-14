@@ -25,7 +25,7 @@ const Testimonials = () => {
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card key={testimonial.id} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white">
               <CardContent className="p-8">
                 <Quote className="w-10 h-10 text-blue-400 mb-4" />
                 
