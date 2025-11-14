@@ -62,7 +62,7 @@ const About = () => {
               return (
                 <div 
                   key={index} 
-                  className="bg-gradient-to-br from-blue-50 to-yellow-50 p-8 rounded-2xl border border-blue-100 hover:shadow-lg transition-shadow"
+                  className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
                   <Icon className="w-10 h-10 text-blue-600 mb-4" />
                   <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
