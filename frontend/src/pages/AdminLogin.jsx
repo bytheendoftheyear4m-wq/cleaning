@@ -45,15 +45,13 @@ const AdminLogin = () => {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center mb-4">
-            <div className="h-20 w-20 bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 rounded-xl flex items-center justify-center shadow-xl">
-              <span className="text-white font-bold text-3xl">GT</span>
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/tbkzsfdv_1000237724.jpg" 
+              alt="Golden Touch Cleaning Services"
+              className="h-32 w-auto object-contain"
+            />
           </div>
-          <h1 className="text-2xl font-bold mb-2">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Golden Touch</span>
-          </h1>
-          <p className="text-gray-600 text-lg font-medium">Cleaning Services</p>
-          <p className="text-gray-500 text-sm mt-2">Admin Portal</p>
+          <p className="text-gray-500 text-lg mt-4">Admin Portal</p>
         </div>
 
         <Card className="shadow-2xl border-0">
