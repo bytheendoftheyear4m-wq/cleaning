@@ -82,10 +82,7 @@ const Services = () => {
         {/* Home & Property Services */}
         <div>
           <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center">
-            <span className="relative inline-block">
-              Home & Property Cleaning
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-sky-500 transform scale-x-50 transition-transform duration-300"></span>
-            </span>
+            Home & Property Cleaning
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {homeServices.map((service) => (
