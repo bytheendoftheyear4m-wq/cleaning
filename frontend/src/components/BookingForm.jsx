@@ -101,11 +101,11 @@ const BookingForm = () => {
             </p>
           </div>
 
-          <Card className="border-0 shadow-2xl">
-            <CardHeader className="bg-gradient-to-r from-blue-500 to-sky-600 text-white">
-              <CardTitle className="text-2xl">Service Booking</CardTitle>
-              <CardDescription className="text-blue-50">
-                Fill out the form below and we'll confirm your appointment
+          <Card className="border-0 shadow-2xl overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white py-8">
+              <CardTitle className="text-3xl font-bold">Service Booking</CardTitle>
+              <CardDescription className="text-blue-100 text-lg">
+                Fill out the form below and we'll confirm your appointment within 24 hours
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8">
