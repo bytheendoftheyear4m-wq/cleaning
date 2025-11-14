@@ -75,26 +75,32 @@ const EmailModal = ({ isOpen, onClose, customer }) => {
 
           <div className="bg-blue-50 p-4 rounded-lg">
             <p className="text-sm text-blue-900">
-              <strong>Quick Templates:</strong>
+              <strong>Professional Templates:</strong>
             </p>
-            <div className="mt-2 space-y-1">
+            <div className="mt-3 space-y-2">
               <button
-                onClick={() => setMessage('Hi ' + customer?.name + ', your booking has been confirmed. We will arrive at the scheduled time. Thank you!')}
-                className="text-sm text-blue-600 hover:text-blue-700 block"
+                onClick={() => setMessage(`Dear ${customer?.name},\n\nGreat news! Your booking with Pure Gold Solutions has been confirmed.\n\nService: ${customer?.serviceName}\nDate: ${customer?.date}\nTime: ${customer?.time}\nLocation: ${customer?.address}\n\nOur professional team will arrive on time and fully equipped to deliver exceptional service. We will call you 30 minutes before arrival.\n\nIf you have any questions or need to make changes, please don't hesitate to contact us at (647) 787-5942.\n\nThank you for choosing Pure Gold Solutions!\n\nBest regards,\nPure Gold Solutions Team\nCalgary's Premier Cleaning Service`)}
+                className="text-sm text-blue-600 hover:text-blue-700 block w-full text-left p-2 hover:bg-blue-100 rounded"
               >
-                • Booking Confirmed
+                📋 Booking Confirmation
               </button>
               <button
-                onClick={() => setMessage('Hi ' + customer?.name + ', we are on our way to your location. Expected arrival in 15 minutes.')}
-                className="text-sm text-blue-600 hover:text-blue-700 block"
+                onClick={() => setMessage(`Hi ${customer?.name},\n\nWe're on our way to your location!\n\nExpected arrival: 15-20 minutes\nLocation: ${customer?.address}\n\nOur team is fully prepared with all necessary equipment and supplies to provide you with exceptional service.\n\nPlease ensure:\n• Access to the service area is clear\n• Pets are secured (if applicable)\n• Water and electricity access is available\n\nIf you need to reach us immediately, call (647) 787-5942.\n\nSee you soon!\n\nPure Gold Solutions Team`)}
+                className="text-sm text-blue-600 hover:text-blue-700 block w-full text-left p-2 hover:bg-blue-100 rounded"
               >
-                • On The Way
+                🚗 On The Way
               </button>
               <button
-                onClick={() => setMessage('Hi ' + customer?.name + ', thank you for choosing Pure Gold Solutions! We hope you are satisfied with our service.')}
-                className="text-sm text-blue-600 hover:text-blue-700 block"
+                onClick={() => setMessage(`Dear ${customer?.name},\n\nThank you for choosing Pure Gold Solutions! It was our pleasure to serve you today.\n\nWe hope you're completely satisfied with our ${customer?.serviceName} service. Your satisfaction is our top priority.\n\nWe would greatly appreciate your feedback:\n• How did we do?\n• Is there anything we could improve?\n• Would you recommend us to others?\n\nFor your next booking, mention this service and receive 10% off!\n\nStay connected:\n📞 Phone: (647) 787-5942\n📧 Email: amasarpong206@gmail.com\n\nWe look forward to serving you again!\n\nBest regards,\nPure Gold Solutions Team\nCalgary's Premier Mobile Cleaning Service`)}
+                className="text-sm text-blue-600 hover:text-blue-700 block w-full text-left p-2 hover:bg-blue-100 rounded"
               >
-                • Thank You
+                ⭐ Thank You & Follow Up
+              </button>
+              <button
+                onClick={() => setMessage(`Dear ${customer?.name},\n\nWe wanted to remind you of your upcoming appointment with Pure Gold Solutions.\n\nService Details:\n• Service: ${customer?.serviceName}\n• Date: ${customer?.date}\n• Time: ${customer?.time}\n• Location: ${customer?.address}\n\nTo ensure smooth service delivery, please:\n✓ Be available at the scheduled time\n✓ Provide access to service areas\n✓ Secure any pets if applicable\n\nNeed to reschedule? No problem! Just call us at (647) 787-5942 at least 24 hours in advance.\n\nWe're excited to serve you!\n\nBest regards,\nPure Gold Solutions Team`)}
+                className="text-sm text-blue-600 hover:text-blue-700 block w-full text-left p-2 hover:bg-blue-100 rounded"
+              >
+                🔔 Appointment Reminder
               </button>
             </div>
           </div>
