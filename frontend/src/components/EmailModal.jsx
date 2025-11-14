@@ -23,19 +23,55 @@ const EmailModal = ({ isOpen, onClose, customer }) => {
       return;
     }
 
+    if (!customer.email) {
+      toast({
+        title: 'No Email Address',
+        description: 'This customer did not provide an email address',
+        variant: 'destructive'
+      });
+      return;
+    }
+
     setSending(true);
     
-    // Simulate sending email
-    setTimeout(() => {
-      toast({
-        title: 'Email Sent!',
-        description: `Message sent to ${customer.name} at ${customer.email || customer.phone}`,
+    try {
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const API = `${BACKEND_URL}/api`;
+      
+      const response = await fetch(`${API}/send-message`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to_email: customer.email,
+          to_name: customer.name,
+          subject: subject,
+          message: message,
+          customer_id: customer.customerId
+        })
       });
+
+      if (response.ok) {
+        toast({
+          title: 'Email Sent Successfully! ✉️',
+          description: `Message sent to ${customer.name} at ${customer.email}`,
+        });
+        setSubject('');
+        setMessage('');
+        onClose();
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      toast({
+        title: 'Failed to Send Email',
+        description: 'There was an error sending the email. Please try again.',
+        variant: 'destructive'
+      });
+    } finally {
       setSending(false);
-      setSubject('');
-      setMessage('');
-      onClose();
-    }, 1000);
+    }
   };
 
   return (
