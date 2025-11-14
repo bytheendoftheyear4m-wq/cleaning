@@ -10,9 +10,9 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
