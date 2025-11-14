@@ -87,29 +87,34 @@ class EmailService:
                         Thank you for choosing <strong>Pure Gold Solutions</strong>! We're thrilled to serve you. Your booking has been confirmed and our team is ready to deliver exceptional service.
                     </p>
                     
+                    <!-- Customer ID Badge -->
+                    <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); padding: 20px; border-radius: 12px; margin: 0 0 25px 0; text-align: center;">
+                        <p style="margin: 0 0 8px 0; color: #bfdbfe; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Your Customer ID</p>
+                        <p style="margin: 0; color: #ffffff; font-size: 28px; font-weight: bold; font-family: 'Courier New', monospace; letter-spacing: 2px;">{booking.get('customerId', 'N/A')}</p>
+                        <p style="margin: 8px 0 0 0; color: #bfdbfe; font-size: 12px;">Please reference this ID for all communications</p>
+                    </div>
+
                     <!-- Booking Details Card -->
-                    <div style="background: linear-gradient(to bottom, #eff6ff, #ffffff); padding: 25px; border-radius: 12px; margin: 0 0 25px 0; border-left: 4px solid #2563eb;">
-                        <h3 style="color: #2563eb; margin: 0 0 20px 0; font-size: 20px;">📋 Booking Details</h3>
+                    <div style="background: linear-gradient(to bottom, #eff6ff, #ffffff); padding: 25px; border-radius: 12px; margin: 0 0 25px 0; border-left: 4px solid #2563eb; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h3 style="color: #2563eb; margin: 0 0 20px 0; font-size: 20px; display: flex; align-items: center;">
+                            📋 Booking Details
+                        </h3>
                         <table style="width: 100%; border-collapse: collapse;">
                             <tr>
-                                <td style="padding: 10px 0; font-weight: 600; color: #374151; width: 40%;">Booking ID:</td>
-                                <td style="padding: 10px 0; color: #1f2937; font-family: 'Courier New', monospace;">{booking['bookingId'][:8]}...</td>
+                                <td style="padding: 12px 0; font-weight: 600; color: #374151; width: 40%; border-bottom: 1px solid #e5e7eb;">Service:</td>
+                                <td style="padding: 12px 0; color: #1f2937; font-weight: 600; border-bottom: 1px solid #e5e7eb;">{booking['serviceName']}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 10px 0; font-weight: 600; color: #374151;">Service:</td>
-                                <td style="padding: 10px 0; color: #1f2937;">{booking['serviceName']}</td>
+                                <td style="padding: 12px 0; font-weight: 600; color: #374151; border-bottom: 1px solid #e5e7eb;">Date:</td>
+                                <td style="padding: 12px 0; color: #1f2937; font-weight: 700; font-size: 16px; border-bottom: 1px solid #e5e7eb;">{booking['date']}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 10px 0; font-weight: 600; color: #374151;">Date:</td>
-                                <td style="padding: 10px 0; color: #1f2937; font-weight: 600;">{booking['date']}</td>
+                                <td style="padding: 12px 0; font-weight: 600; color: #374151; border-bottom: 1px solid #e5e7eb;">Time:</td>
+                                <td style="padding: 12px 0; color: #1f2937; font-weight: 700; font-size: 16px; border-bottom: 1px solid #e5e7eb;">{booking['time']}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 10px 0; font-weight: 600; color: #374151;">Time:</td>
-                                <td style="padding: 10px 0; color: #1f2937; font-weight: 600;">{booking['time']}</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px 0; font-weight: 600; color: #374151;">Location:</td>
-                                <td style="padding: 10px 0; color: #1f2937;">{booking['address']}</td>
+                                <td style="padding: 12px 0; font-weight: 600; color: #374151;">Location:</td>
+                                <td style="padding: 12px 0; color: #1f2937;">{booking['address']}</td>
                             </tr>
                         </table>
                     </div>
