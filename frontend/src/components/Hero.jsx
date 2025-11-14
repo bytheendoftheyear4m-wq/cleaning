@@ -47,7 +47,7 @@ const Hero = () => {
             <Button 
               onClick={scrollToBooking}
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-600 hover:to-sky-700 text-white text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-lg px-10 py-7 shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 transform hover:scale-105"
             >
               Book Your Service
             </Button>
@@ -55,7 +55,7 @@ const Hero = () => {
               onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
               size="lg"
               variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 text-lg px-8 py-6"
+              className="bg-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 text-lg px-10 py-7 transition-all duration-300"
             >
               View Services
             </Button>
