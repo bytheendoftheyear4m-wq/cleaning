@@ -8,14 +8,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" 
-                alt="Golden Touch Cleaning Services Logo"
-                className="h-14 w-auto object-contain bg-white rounded-lg p-1"
-              />
-              <div>
-                <h3 className="text-white font-bold text-lg">Golden Touch Cleaning Services</h3>
+            <div className="flex items-center mb-4">
+              <div className="h-12 w-12 bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-xl">GT</span>
+              </div>
+              <div className="ml-3">
+                <h3 className="text-white font-bold text-lg leading-tight">Golden Touch</h3>
+                <p className="text-gray-400 text-xs">Cleaning Services</p>
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-4">
