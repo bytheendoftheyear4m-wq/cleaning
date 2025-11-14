@@ -69,7 +69,6 @@ const BookingForm = () => {
         phone: '',
         address: '',
         service: '',
-        vehicleType: '',
         date: undefined,
         time: '',
         notes: ''
