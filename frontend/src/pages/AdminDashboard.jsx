@@ -6,10 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Input } from '../components/ui/input';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Calendar, Users, CheckCircle, Clock, LogOut, Search, Phone, Mail, MapPin, Car, Bell, Send } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 import { format } from 'date-fns';
 import EmailModal from '../components/EmailModal';
+import BookingCalendar from '../components/BookingCalendar';
+import BookedTimesList from '../components/BookedTimesList';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
