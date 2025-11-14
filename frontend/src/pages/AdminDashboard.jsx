@@ -24,6 +24,9 @@ const AdminDashboard = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [selectedBooking, setSelectedBooking] = useState(null);
+  const [emailModalOpen, setEmailModalOpen] = useState(false);
+  const [lastBookingCount, setLastBookingCount] = useState(0);
+  const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
     fetchBookings();
