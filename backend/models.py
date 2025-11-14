@@ -16,8 +16,18 @@ class BookingCreate(BaseModel):
     notes: Optional[str] = None
 
 
+import random
+import string
+
+def generate_customer_id():
+    """Generate a unique 8-character customer ID like PG-ABC123"""
+    letters = ''.join(random.choices(string.ascii_uppercase, k=3))
+    numbers = ''.join(random.choices(string.digits, k=3))
+    return f"PG-{letters}{numbers}"
+
 class Booking(BaseModel):
     bookingId: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    customerId: str = Field(default_factory=generate_customer_id)
     name: str
     email: Optional[str] = None
     phone: str
