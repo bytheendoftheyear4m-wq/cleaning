@@ -72,7 +72,7 @@ const Services = () => {
                   </ul>
                   <Button 
                     onClick={scrollToBooking}
-                    className="w-full bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-600 hover:to-sky-700 text-white"
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
                   >
                     Select Service
                   </Button>
@@ -116,7 +116,7 @@ const Services = () => {
                   </ul>
                   <Button 
                     onClick={scrollToBooking}
-                    className="w-full bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-600 hover:to-sky-700 text-white"
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
                   >
                     Select Service
                   </Button>
