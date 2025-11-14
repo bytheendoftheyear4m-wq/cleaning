@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Calendar as CalendarComponent } from './ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { useToast } from '../hooks/use-toast';
-import { services, vehicleTypes, timeSlots } from '../mock';
+import { services, timeSlots } from '../mock';
 import { format } from 'date-fns';
 import axios from 'axios';
 
