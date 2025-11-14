@@ -74,7 +74,17 @@ class EmailService:
             <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
                 <!-- Header with Logo and Gradient -->
                 <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); padding: 40px 20px; text-align: center; border-radius: 0;">
-                    <img src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" alt="Golden Touch Cleaning Services" style="max-width: 120px; height: auto; margin-bottom: 20px; background: white; padding: 10px; border-radius: 10px;" />
+                    <div style="background: white; padding: 15px 25px; border-radius: 12px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 24px; font-weight: bold;">GT</span>
+                        </div>
+                        <div style="text-align: left;">
+                            <div style="font-size: 20px; font-weight: bold; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">Golden Touch</div>
+                            <div style="font-size: 11px; color: #6b7280; font-weight: 600;">Cleaning Services</div>
+                        </div>
+                    </div>
+                </div>
                     <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Booking Confirmed!</h1>
                     <p style="color: #bfdbfe; margin: 10px 0 0 0; font-size: 16px;">We're excited to serve you</p>
                 </div>
