@@ -112,14 +112,7 @@ export const testimonials = [
   }
 ];
 
-export const vehicleTypes = [
-  { value: 'sedan', label: 'Sedan' },
-  { value: 'suv', label: 'SUV' },
-  { value: 'truck', label: 'Truck' },
-  { value: 'van', label: 'Van' },
-  { value: 'luxury', label: 'Luxury Vehicle' },
-  { value: 'other', label: 'Other' }
-];
+// Vehicle types removed - no longer needed
 
 export const timeSlots = [
   { value: '8:00 AM', label: '8:00 AM' },
