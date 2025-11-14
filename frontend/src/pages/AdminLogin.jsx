@@ -87,7 +87,7 @@ const AdminLogin = () => {
               </Button>
 
               <div className="text-center text-sm text-gray-600 mt-4">
-                <p>Default password: <code className="bg-gray-100 px-2 py-1 rounded">puregold2025</code></p>
+                <p className="text-xs text-gray-500">Enter your admin password to continue</p>
               </div>
             </form>
           </CardContent>
