@@ -139,7 +139,7 @@ class EmailService:
                         </p>
                         <p style="margin: 8px 0; font-size: 16px;">
                             <strong style="color: #2563eb;">📧</strong> 
-                            <a href="mailto:amasarpong206@gmail.com" style="color: #2563eb; text-decoration: none; font-weight: 600;">amasarpong206@gmail.com</a>
+                            <a href="mailto:ohemenggold@gmail.com" style="color: #2563eb; text-decoration: none; font-weight: 600;">ohemenggold@gmail.com</a>
                         </p>
                     </div>
                 </div>
