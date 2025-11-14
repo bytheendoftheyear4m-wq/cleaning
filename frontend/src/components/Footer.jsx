@@ -86,7 +86,13 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-          <p>&copy; 2025 Pure Gold Solutions. All rights reserved.</p>
+          <div className="flex items-center justify-center gap-4 mb-2">
+            <p>&copy; 2025 Pure Gold Solutions. All rights reserved.</p>
+            <span className="text-gray-600">|</span>
+            <a href="/admin/login" className="text-blue-400 hover:text-blue-300 transition-colors">
+              Admin Portal
+            </a>
+          </div>
         </div>
       </div>
     </footer>
