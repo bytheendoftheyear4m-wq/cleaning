@@ -35,7 +35,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl text-gray-200 mb-8 max-w-2xl">
-            Professional car detailing, home cleaning, event services, and contract cleaning delivered to your location in Calgary. We bring excellence to your doorstep.
+            Experience premium mobile cleaning services in Calgary. From car detailing to home cleaning and event services, we deliver exceptional results at your convenience.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
