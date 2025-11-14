@@ -311,6 +311,11 @@ const AdminDashboard = () => {
                       <div>
                         <h3 className="font-bold text-lg text-gray-900">{booking.name}</h3>
                         <p className="text-sm text-gray-600">{booking.serviceName}</p>
+                        {booking.customerId && (
+                          <p className="text-xs font-mono text-blue-600 mt-1 bg-blue-50 inline-block px-2 py-0.5 rounded">
+                            ID: {booking.customerId}
+                          </p>
+                        )}
                       </div>
                       <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(booking.status)}`}>
                         {booking.status}
