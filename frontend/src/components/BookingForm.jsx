@@ -32,6 +32,38 @@ const BookingForm = () => {
     notes: ''
   });
 
+  // Fetch booked slots when date changes
+  const fetchBookedSlots = async (selectedDate) => {
+    if (!selectedDate) return;
+    
+    try {
+      const dateStr = format(selectedDate, 'yyyy-MM-dd');
+      const response = await axios.get(`${API}/bookings`);
+      const bookingsOnDate = response.data.filter(b => b.date === dateStr);
+      const bookedTimes = bookingsOnDate.map(b => b.time);
+      
+      // Filter out booked times
+      const available = timeSlots.filter(slot => !bookedTimes.includes(slot.value));
+      setAvailableSlots(available);
+      setBookedSlots(bookedTimes);
+    } catch (error) {
+      console.error('Error fetching booked slots:', error);
+    }
+  };
+
+  // Update available slots when date changes
+  React.useEffect(() => {
+    if (formData.date) {
+      fetchBookedSlots(formData.date);
+      // Reset time if it's no longer available
+      if (formData.time && bookedSlots.includes(formData.time)) {
+        setFormData({ ...formData, time: '' });
+      }
+    } else {
+      setAvailableSlots(timeSlots);
+    }
+  }, [formData.date]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
