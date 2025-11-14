@@ -151,12 +151,19 @@ class EmailService:
 
     async def send_business_notification(self, booking: dict):
         """Send new booking notification to business"""
-        subject = f"New Booking: {booking['serviceName']} - {booking['date']}"
+        subject = f"🔔 New Booking Alert: {booking['serviceName']} - {booking['date']}"
         html_content = f"""
         <html>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-            <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-                <h2 style="color: #f59e0b;">New Booking Received</h2>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f3f4f6;">
+            <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+                <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 30px 20px; text-align: center;">
+                    <h2 style="color: white; margin: 0; font-size: 24px;">🎉 New Booking Received!</h2>
+                    <p style="color: #d1fae5; margin: 10px 0 0 0;">Action required</p>
+                </div>
                 
                 <div style="background: #f9fafb; padding: 20px; border-radius: 8px;">
                     <h3 style="margin-top: 0;">Booking Details</h3>
