@@ -165,14 +165,14 @@ const AdminDashboard = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" 
-                alt="Golden Touch Cleaning Services"
-                className="h-12 w-auto"
-              />
+              <div className="h-14 w-14 bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-2xl">GT</span>
+              </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-                <p className="text-sm text-gray-600">Golden Touch Cleaning Services</p>
+                <h1 className="text-2xl font-bold leading-tight">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Golden Touch</span>
+                </h1>
+                <p className="text-sm text-gray-600 font-medium">Admin Dashboard • Cleaning Services</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
