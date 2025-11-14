@@ -18,12 +18,18 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center space-x-3">
             <img 
               src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/tbkzsfdv_1000237724.jpg" 
               alt="Golden Touch Cleaning Services"
               className="h-16 w-auto object-contain"
             />
+            <div>
+              <h1 className="text-xl font-bold leading-tight">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Golden Touch</span>
+              </h1>
+              <p className="text-xs text-gray-600 font-medium">Cleaning Services</p>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
