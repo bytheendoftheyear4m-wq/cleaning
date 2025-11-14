@@ -54,7 +54,7 @@ const AdminDashboard = () => {
         });
         // Play notification sound (optional)
         if ('Notification' in window && Notification.permission === 'granted') {
-          new Notification('Pure Gold Solutions', {
+          new Notification('Golden Touch Cleaning Services', {
             body: `New booking received!`,
             icon: 'https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg'
           });
@@ -167,12 +167,12 @@ const AdminDashboard = () => {
             <div className="flex items-center space-x-4">
               <img 
                 src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" 
-                alt="Pure Gold Solutions"
+                alt="Golden Touch Cleaning Services"
                 className="h-12 w-auto"
               />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-                <p className="text-sm text-gray-600">Pure Gold Solutions</p>
+                <p className="text-sm text-gray-600">Golden Touch Cleaning Services</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">

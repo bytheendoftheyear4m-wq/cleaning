@@ -21,11 +21,11 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <img 
               src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" 
-              alt="Pure Gold Solutions Logo"
+              alt="Golden Touch Cleaning Services Logo"
               className="h-16 w-auto object-contain"
             />
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Pure Gold Solutions</h1>
+              <h1 className="text-xl font-bold text-gray-900">Golden Touch Cleaning Services</h1>
               <p className="text-xs text-gray-600">Car & Home Cleaning Experts</p>
             </div>
           </div>

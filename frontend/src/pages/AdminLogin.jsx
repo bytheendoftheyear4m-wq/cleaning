@@ -25,7 +25,7 @@ const AdminLogin = () => {
       if (success) {
         toast({
           title: 'Login Successful',
-          description: 'Welcome to Pure Gold Solutions Admin',
+          description: 'Welcome to Golden Touch Cleaning Services Admin',
         });
         navigate('/admin/dashboard');
       } else {
@@ -46,11 +46,11 @@ const AdminLogin = () => {
         <div className="text-center mb-8">
           <img 
             src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" 
-            alt="Pure Gold Solutions"
+            alt="Golden Touch Cleaning Services"
             className="h-20 w-auto mx-auto mb-4"
           />
           <h1 className="text-2xl font-bold text-gray-900">Admin Portal</h1>
-          <p className="text-gray-600 mt-2">Pure Gold Solutions</p>
+          <p className="text-gray-600 mt-2">Golden Touch Cleaning Services</p>
         </div>
 
         <Card className="shadow-2xl border-0">

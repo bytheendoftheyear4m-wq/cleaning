@@ -24,7 +24,7 @@ const About = () => {
               Calgary's Most Trusted Mobile Cleaning Service
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              At Pure Gold Solutions, we're passionate about delivering exceptional cleaning services for both vehicles and properties. Our team of certified professionals uses premium products and proven techniques to make everything shine like new.
+              At Golden Touch Cleaning Services, we're passionate about delivering exceptional cleaning services for both vehicles and properties. Our team of certified professionals uses premium products and proven techniques to make everything shine like new.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               We understand your time is valuable. That's why we bring our professional-grade equipment and expertise directly to your home or office in Calgary. From car detailing to home cleaning, event services, and contract cleaning – we're your one-stop solution.

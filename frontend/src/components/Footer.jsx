@@ -11,11 +11,11 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <img 
                 src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" 
-                alt="Pure Gold Solutions Logo"
+                alt="Golden Touch Cleaning Services Logo"
                 className="h-14 w-auto object-contain bg-white rounded-lg p-1"
               />
               <div>
-                <h3 className="text-white font-bold text-lg">Pure Gold Solutions</h3>
+                <h3 className="text-white font-bold text-lg">Golden Touch Cleaning Services</h3>
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-4">
@@ -87,7 +87,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
           <div className="flex items-center justify-center gap-4 mb-2">
-            <p>&copy; 2025 Pure Gold Solutions. All rights reserved.</p>
+            <p>&copy; 2025 Golden Touch Cleaning Services. All rights reserved.</p>
             <span className="text-gray-600">|</span>
             <a href="/admin/login" className="text-blue-400 hover:text-blue-300 transition-colors">
               Admin Portal
