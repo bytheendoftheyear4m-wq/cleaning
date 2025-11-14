@@ -91,7 +91,7 @@ const EmailModal = ({ isOpen, onClose, customer }) => {
                 🚗 On The Way
               </button>
               <button
-                onClick={() => setMessage(`Dear ${customer?.name},\n\nThank you for choosing Pure Gold Solutions! It was our pleasure to serve you today.\n\nWe hope you're completely satisfied with our ${customer?.serviceName} service. Your satisfaction is our top priority.\n\nWe would greatly appreciate your feedback:\n• How did we do?\n• Is there anything we could improve?\n• Would you recommend us to others?\n\nFor your next booking, mention this service and receive 10% off!\n\nStay connected:\n📞 Phone: (647) 787-5942\n📧 Email: amasarpong206@gmail.com\n\nWe look forward to serving you again!\n\nBest regards,\nPure Gold Solutions Team\nCalgary's Premier Mobile Cleaning Service`)}
+                onClick={() => setMessage(`Dear ${customer?.name},\n\nThank you for choosing Pure Gold Solutions! It was our pleasure to serve you today.\n\nWe hope you're completely satisfied with our ${customer?.serviceName} service. Your satisfaction is our top priority.\n\nWe would greatly appreciate your feedback:\n• How did we do?\n• Is there anything we could improve?\n• Would you recommend us to others?\n\nFor your next booking, mention this service and receive 10% off!\n\nStay connected:\n📞 Phone: (647) 787-5942\n📧 Email: ohemenggold@gmail.com\n\nWe look forward to serving you again!\n\nBest regards,\nPure Gold Solutions Team\nCalgary's Premier Mobile Cleaning Service`)}
                 className="text-sm text-blue-600 hover:text-blue-700 block w-full text-left p-2 hover:bg-blue-100 rounded"
               >
                 ⭐ Thank You & Follow Up
