@@ -469,8 +469,8 @@ const AdminDashboard = () => {
               </Card>
             )}
           </div>
-            </div>
-          </TabsContent>
+        </div>
+      </TabsContent>
 
           {/* Calendar View */}
           <TabsContent value="calendar">
