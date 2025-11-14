@@ -270,6 +270,9 @@ const BookingForm = () => {
                 <p className="text-sm text-gray-600 text-center">
                   * Payment will be collected after service completion
                 </p>
+                <p className="text-xs text-gray-500 text-center mt-2">
+                  Need help? Call us at <a href="tel:6477875942" className="text-blue-600 hover:underline">(647) 787-5942</a>
+                </p>
               </form>
             </CardContent>
           </Card>
