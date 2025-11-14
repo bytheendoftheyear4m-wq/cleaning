@@ -5,14 +5,19 @@ import { testimonials } from '../mock';
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-b from-blue-50 to-white">
+    <section id="testimonials" className="py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <div className="inline-block mb-4">
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full">
+              Testimonials
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Don't just take our word for it – hear from satisfied customers across Calgary
           </p>
         </div>
