@@ -8,14 +8,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center mb-4">
-              <div className="h-12 w-12 bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">GT</span>
-              </div>
-              <div className="ml-3">
-                <h3 className="text-white font-bold text-lg leading-tight">Golden Touch</h3>
-                <p className="text-gray-400 text-xs">Cleaning Services</p>
-              </div>
+            <div className="mb-4">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/tbkzsfdv_1000237724.jpg" 
+                alt="Golden Touch Cleaning Services"
+                className="h-20 w-auto object-contain brightness-110"
+              />
             </div>
             <p className="text-sm text-gray-400 mb-4">
               Calgary's premier mobile cleaning service for cars and homes. Bringing professional care to your doorstep.
