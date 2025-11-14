@@ -259,13 +259,22 @@ const BookingForm = () => {
                         <SelectValue placeholder="Select time" />
                       </SelectTrigger>
                       <SelectContent>
-                        {timeSlots.map((slot) => (
-                          <SelectItem key={slot.value} value={slot.value}>
-                            {slot.label}
-                          </SelectItem>
-                        ))}
+                        {availableSlots.length > 0 ? (
+                          availableSlots.map((slot) => (
+                            <SelectItem key={slot.value} value={slot.value}>
+                              {slot.label}
+                            </SelectItem>
+                          ))
+                        ) : (
+                          <SelectItem value="none" disabled>No available slots for this date</SelectItem>
+                        )}
                       </SelectContent>
                     </Select>
+                    {formData.date && availableSlots.length < timeSlots.length && (
+                      <p className="text-xs text-gray-600">
+                        {timeSlots.length - availableSlots.length} time slot(s) already booked
+                      </p>
+                    )}
                   </div>
                 </div>
 
