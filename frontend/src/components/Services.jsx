@@ -34,11 +34,16 @@ const Services = () => {
         </div>
 
         {/* Car Services */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Car Detailing Services</h3>
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center">
+            <span className="relative inline-block">
+              Car Detailing Services
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-sky-500 transform scale-x-50 transition-transform duration-300"></span>
+            </span>
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {carServices.map((service) => (
-              <Card key={service.id} className="group hover:shadow-2xl transition-all duration-300 border-0 overflow-hidden">
+              <Card key={service.id} className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden hover:-translate-y-2 bg-white">
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={service.image} 
