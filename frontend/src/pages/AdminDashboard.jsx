@@ -336,7 +336,17 @@ const AdminDashboard = () => {
                 <CardContent className="p-6 space-y-6">
                   {/* Customer Info */}
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Customer Information</h4>
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="font-semibold text-gray-900">Customer Information</h4>
+                      <Button 
+                        size="sm"
+                        onClick={() => setEmailModalOpen(true)}
+                        className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
+                      >
+                        <Send className="w-4 h-4 mr-2" />
+                        Send Message
+                      </Button>
+                    </div>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-gray-700">
                         <Users className="w-4 h-4 text-blue-600" />
