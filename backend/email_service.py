@@ -1,10 +1,9 @@
 import os
-import aiosmtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 import logging
 from dotenv import load_dotenv
 from pathlib import Path
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail, Email, To, Content
 
 # Load environment variables
 ROOT_DIR = Path(__file__).parent
@@ -15,15 +14,16 @@ logger = logging.getLogger(__name__)
 
 class EmailService:
     def __init__(self):
-        self.smtp_host = os.getenv('SMTP_HOST', 'smtp.gmail.com')
-        self.smtp_port = int(os.getenv('SMTP_PORT', 587))
-        self.smtp_user = os.getenv('SMTP_USER', '')
-        self.smtp_pass = os.getenv('SMTP_PASS', '')
-        self.business_email = os.getenv('BUSINESS_EMAIL', 'info@puregoldsolutions.ca')
-        self.enabled = bool(self.smtp_user and self.smtp_pass)
+        self.sendgrid_api_key = os.getenv('SENDGRID_API_KEY', '')
+        self.from_email = os.getenv('SENDGRID_FROM_EMAIL', 'amasarpong206@gmail.com')
+        self.business_email = os.getenv('BUSINESS_EMAIL', 'amasarpong206@gmail.com')
+        self.enabled = bool(self.sendgrid_api_key)
         
-        if not self.enabled:
-            logger.warning('Email service disabled: SMTP credentials not configured')
+        if self.enabled:
+            self.sg = SendGridAPIClient(self.sendgrid_api_key)
+            logger.info('SendGrid email service initialized successfully')
+        else:
+            logger.warning('Email service disabled: SendGrid API key not configured')
 
     async def send_email(self, to_email: str, subject: str, html_content: str):
         """Send an email using SMTP"""
