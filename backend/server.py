@@ -167,33 +167,84 @@ async def get_booking(booking_id: str):
         logger.error(f"Error fetching booking {booking_id}: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch booking")
 
-@api_router.put("/bookings/{booking_id}/status")
-async def update_booking_status(booking_id: str, status_update: StatusUpdate):
-    """Update booking status"""
-    try:
-        valid_statuses = ['pending', 'confirmed', 'in_progress', 'completed', 'cancelled']
-        if status_update.status not in valid_statuses:
-            raise HTTPException(status_code=400, detail=f"Invalid status. Must be one of: {valid_statuses}")
-        
-        result = await db.bookings.update_one(
-            {"bookingId": booking_id},
-            {
-                "$set": {
-                    "status": status_update.status,
-                    "updatedAt": datetime.now(timezone.utc).isoformat()
-                }
-            }
-        )
-        
-        if result.matched_count == 0:
-            raise HTTPException(status_code=404, detail="Booking not found")
-        
-        return {"message": "Status updated successfully", "status": status_update.status}
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating booking status {booking_id}: {str(e)}")
-        raise HTTPException(status_code=500, detail="Failed to update booking status")
+@api_router.put("/bookings/{booking_id}/status", response_model=Booking)
+async def update_booking_status(booking_id: str, status_update: dict):
+    result = await db.bookings.find_one_and_update(
+        {"bookingId": booking_id},
+        {"$set": {"status": status_update["status"], "updatedAt": datetime.utcnow()}},
+        return_document=True
+    )
+    if not result:
+        raise HTTPException(status_code=404, detail="Booking not found")
+    return Booking(**result)
+
+# New endpoint for sending custom messages
+class MessageRequest(BaseModel):
+    to_email: str
+    to_name: str
+    subject: str
+    message: str
+    customer_id: Optional[str] = None
+
+@api_router.post("/send-message")
+async def send_custom_message(message_req: MessageRequest):
+    """Send a custom message to a customer"""
+    html_content = f"""
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f3f4f6;">
+        <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+            <!-- Header with Logo -->
+            <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); padding: 40px 20px; text-align: center;">
+                <img src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" alt="Pure Gold Solutions" style="max-width: 120px; height: auto; margin-bottom: 20px; background: white; padding: 10px; border-radius: 10px;" />
+                <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">{message_req.subject}</h1>
+                <p style="color: #bfdbfe; margin: 10px 0 0 0; font-size: 16px;">Pure Gold Solutions</p>
+            </div>
+            
+            <!-- Message Content -->
+            <div style="padding: 40px 30px; background: #ffffff;">
+                <p style="font-size: 18px; color: #1f2937; margin: 0 0 20px 0;">Hi <strong>{message_req.to_name}</strong>,</p>
+                
+                {f'<div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); padding: 15px; border-radius: 8px; margin: 0 0 25px 0; text-align: center;"><p style="margin: 0; color: #bfdbfe; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Your Customer ID</p><p style="margin: 5px 0 0 0; color: #ffffff; font-size: 20px; font-weight: bold; font-family: monospace; letter-spacing: 2px;">{message_req.customer_id}</p></div>' if message_req.customer_id else ''}
+                
+                <div style="background: #f9fafb; padding: 25px; border-radius: 12px; margin: 0 0 30px 0; border-left: 4px solid #2563eb;">
+                    <p style="color: #1f2937; font-size: 16px; line-height: 1.8; margin: 0; white-space: pre-wrap;">{message_req.message}</p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div style="text-align: center; padding: 20px 0; border-top: 2px solid #e5e7eb;">
+                    <p style="color: #6b7280; margin: 0 0 15px 0; font-size: 14px;">Questions? We're here to help!</p>
+                    <p style="margin: 8px 0; font-size: 16px;">
+                        <strong style="color: #2563eb;">📞</strong> 
+                        <a href="tel:6477875942" style="color: #2563eb; text-decoration: none; font-weight: 600;">(647) 787-5942</a>
+                    </p>
+                    <p style="margin: 8px 0; font-size: 16px;">
+                        <strong style="color: #2563eb;">📧</strong> 
+                        <a href="mailto:ohemenggold@gmail.com" style="color: #2563eb; text-decoration: none; font-weight: 600;">ohemenggold@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div style="background: #1f2937; padding: 30px; text-align: center;">
+                <p style="color: #9ca3af; margin: 0 0 10px 0; font-size: 14px; font-weight: 600;">Pure Gold Solutions</p>
+                <p style="color: #6b7280; margin: 0; font-size: 13px;">Calgary's Premier Mobile Cleaning Service</p>
+                <p style="color: #6b7280; margin: 15px 0 0 0; font-size: 12px;">Car Detailing • Home Cleaning • Event Services</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
+    
+    success = await email_service.send_email(message_req.to_email, message_req.subject, html_content)
+    
+    if success:
+        return {"success": True, "message": "Email sent successfully"}
+    else:
+        raise HTTPException(status_code=500, detail="Failed to send email")
 
 # Include the router in the main app
 app.include_router(api_router)
