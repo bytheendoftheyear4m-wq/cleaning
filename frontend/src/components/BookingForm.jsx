@@ -19,6 +19,8 @@ const API = `${BACKEND_URL}/api`;
 const BookingForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [bookedSlots, setBookedSlots] = useState([]);
+  const [availableSlots, setAvailableSlots] = useState(timeSlots);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
