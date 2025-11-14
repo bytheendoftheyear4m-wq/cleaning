@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (password) => {
     // Simple authentication - in production, this should be server-side
-    const ADMIN_PASSWORD = 'puregold2025'; // Change this to your secure password
+    const ADMIN_PASSWORD = 'Amasarpong2006'; // Change this to your secure password
     
     if (password === ADMIN_PASSWORD) {
       localStorage.setItem('adminToken', 'authenticated');
