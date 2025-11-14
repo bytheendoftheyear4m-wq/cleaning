@@ -381,11 +381,6 @@ const AdminDashboard = () => {
                         <Calendar className="w-4 h-4 text-blue-600" />
                         <span>{selectedBooking.date} at {selectedBooking.time}</span>
                       </div>
-                      {selectedBooking.vehicleType && (
-                        <div className="text-gray-700">
-                          <span className="font-medium">Vehicle:</span> {selectedBooking.vehicleType}
-                        </div>
-                      )}
                       {selectedBooking.notes && (
                         <div className="text-gray-700">
                           <span className="font-medium">Notes:</span> {selectedBooking.notes}
