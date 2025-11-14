@@ -26,30 +26,21 @@ class EmailService:
             logger.warning('Email service disabled: SendGrid API key not configured')
 
     async def send_email(self, to_email: str, subject: str, html_content: str):
-        """Send an email using SMTP"""
+        """Send an email using SendGrid"""
         if not self.enabled:
             logger.info(f'Email sending skipped (not configured): {subject} to {to_email}')
             return False
 
         try:
-            message = MIMEMultipart('alternative')
-            message['From'] = self.smtp_user
-            message['To'] = to_email
-            message['Subject'] = subject
-
-            html_part = MIMEText(html_content, 'html')
-            message.attach(html_part)
-
-            await aiosmtplib.send(
-                message,
-                hostname=self.smtp_host,
-                port=self.smtp_port,
-                username=self.smtp_user,
-                password=self.smtp_pass,
-                start_tls=True
+            message = Mail(
+                from_email=Email(self.from_email, 'Pure Gold Solutions'),
+                to_emails=To(to_email),
+                subject=subject,
+                html_content=Content('text/html', html_content)
             )
             
-            logger.info(f'Email sent successfully to {to_email}')
+            response = self.sg.send(message)
+            logger.info(f'Email sent successfully to {to_email} (Status: {response.status_code})')
             return True
         except Exception as e:
             logger.error(f'Failed to send email to {to_email}: {str(e)}')
