@@ -352,6 +352,15 @@ const AdminDashboard = () => {
                         Send Message
                       </Button>
                     </div>
+                    
+                    {/* Customer ID Badge */}
+                    {selectedBooking.customerId && (
+                      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-lg mb-4 text-center">
+                        <p className="text-xs uppercase tracking-wider opacity-90 mb-1">Customer ID</p>
+                        <p className="text-2xl font-bold font-mono tracking-wider">{selectedBooking.customerId}</p>
+                      </div>
+                    )}
+                    
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-gray-700">
                         <Users className="w-4 h-4 text-blue-600" />
