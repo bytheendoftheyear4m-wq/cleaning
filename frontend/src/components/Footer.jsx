@@ -75,7 +75,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-blue-400" />
-                <a href="mailto:amasarpong206@gmail.com" className="hover:text-blue-300 transition-colors">amasarpong206@gmail.com</a>
+                <a href="mailto:ohemenggold@gmail.com" className="hover:text-blue-300 transition-colors">ohemenggold@gmail.com</a>
               </li>
               <li className="flex items-center space-x-2">
                 <Clock className="w-4 h-4 text-blue-400" />
