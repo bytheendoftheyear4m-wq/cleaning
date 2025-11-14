@@ -30,6 +30,9 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     fetchBookings();
+    // Poll for new bookings every 30 seconds
+    const interval = setInterval(fetchBookings, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
