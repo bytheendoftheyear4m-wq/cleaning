@@ -71,49 +71,76 @@ class EmailService:
                     <p style="color: #bfdbfe; margin: 10px 0 0 0; font-size: 16px;">We're excited to serve you</p>
                 </div>
                 
-                <div style="background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px;">
-                    <p style="font-size: 16px;">Hi {booking['name']},</p>
+                <!-- Main Content -->
+                <div style="padding: 40px 30px; background: #ffffff;">
+                    <p style="font-size: 18px; color: #1f2937; margin: 0 0 20px 0;">Hi <strong>{booking['name']}</strong>,</p>
                     
-                    <p>Thank you for choosing Pure Gold Solutions! Your booking has been confirmed.</p>
+                    <p style="font-size: 16px; color: #4b5563; line-height: 1.6; margin: 0 0 30px 0;">
+                        Thank you for choosing <strong>Pure Gold Solutions</strong>! We're thrilled to serve you. Your booking has been confirmed and our team is ready to deliver exceptional service.
+                    </p>
                     
-                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                        <h3 style="color: #f59e0b; margin-top: 0;">Booking Details</h3>
+                    <!-- Booking Details Card -->
+                    <div style="background: linear-gradient(to bottom, #eff6ff, #ffffff); padding: 25px; border-radius: 12px; margin: 0 0 25px 0; border-left: 4px solid #2563eb;">
+                        <h3 style="color: #2563eb; margin: 0 0 20px 0; font-size: 20px;">📋 Booking Details</h3>
                         <table style="width: 100%; border-collapse: collapse;">
                             <tr>
-                                <td style="padding: 8px 0; font-weight: bold; width: 40%;">Booking ID:</td>
-                                <td style="padding: 8px 0;">{booking['bookingId']}</td>
+                                <td style="padding: 10px 0; font-weight: 600; color: #374151; width: 40%;">Booking ID:</td>
+                                <td style="padding: 10px 0; color: #1f2937; font-family: 'Courier New', monospace;">{booking['bookingId'][:8]}...</td>
                             </tr>
                             <tr>
-                                <td style="padding: 8px 0; font-weight: bold;">Service:</td>
-                                <td style="padding: 8px 0;">{booking['serviceName']}</td>
+                                <td style="padding: 10px 0; font-weight: 600; color: #374151;">Service:</td>
+                                <td style="padding: 10px 0; color: #1f2937;">{booking['serviceName']}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 8px 0; font-weight: bold;">Date:</td>
-                                <td style="padding: 8px 0;">{booking['date']}</td>
+                                <td style="padding: 10px 0; font-weight: 600; color: #374151;">Date:</td>
+                                <td style="padding: 10px 0; color: #1f2937; font-weight: 600;">{booking['date']}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 8px 0; font-weight: bold;">Time:</td>
-                                <td style="padding: 8px 0;">{booking['time']}</td>
+                                <td style="padding: 10px 0; font-weight: 600; color: #374151;">Time:</td>
+                                <td style="padding: 10px 0; color: #1f2937; font-weight: 600;">{booking['time']}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 8px 0; font-weight: bold;">Address:</td>
-                                <td style="padding: 8px 0;">{booking['address']}</td>
+                                <td style="padding: 10px 0; font-weight: 600; color: #374151;">Location:</td>
+                                <td style="padding: 10px 0; color: #1f2937;">{booking['address']}</td>
                             </tr>
                         </table>
                     </div>
                     
-                    <div style="background: #fef3c7; padding: 15px; border-radius: 8px; margin: 20px 0;">
-                        <p style="margin: 0; font-weight: bold; color: #92400e;">Payment Information:</p>
-                        <p style="margin: 5px 0 0 0; color: #92400e;">Payment will be collected after service completion.</p>
+                    <!-- Payment Info -->
+                    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 20px; border-radius: 12px; margin: 0 0 30px 0; border: 2px solid #fbbf24;">
+                        <p style="margin: 0; font-weight: bold; color: #92400e; font-size: 16px;">💳 Payment Information</p>
+                        <p style="margin: 10px 0 0 0; color: #78350f; font-size: 14px;">Payment will be collected after service completion. We accept cash, credit cards, and e-transfer.</p>
                     </div>
                     
-                    <p>Our team will contact you shortly to confirm the appointment details.</p>
+                    <!-- What's Next -->
+                    <div style="background: #f9fafb; padding: 20px; border-radius: 12px; margin: 0 0 30px 0;">
+                        <h4 style="color: #1f2937; margin: 0 0 15px 0; font-size: 16px;">✨ What's Next?</h4>
+                        <ul style="margin: 0; padding-left: 20px; color: #4b5563; line-height: 1.8;">
+                            <li>Our team will call to confirm your appointment</li>
+                            <li>We'll arrive on time at your location</li>
+                            <li>Enjoy professional cleaning service!</li>
+                        </ul>
+                    </div>
                     
-                    <p style="margin-top: 30px;">If you have any questions, please don't hesitate to contact us:</p>
-                    <p style="margin: 5px 0;">📞 (403) 555-0123</p>
-                    <p style="margin: 5px 0;">📧 info@puregoldsolutions.ca</p>
-                    
-                    <p style="margin-top: 30px; color: #6b7280; font-size: 14px;">Best regards,<br>Pure Gold Solutions Team<br>Calgary's Premier Cleaning Service</p>
+                    <!-- Contact Info -->
+                    <div style="text-align: center; padding: 20px 0; border-top: 2px solid #e5e7eb;">
+                        <p style="color: #6b7280; margin: 0 0 15px 0; font-size: 14px;">Questions? We're here to help!</p>
+                        <p style="margin: 8px 0; font-size: 16px;">
+                            <strong style="color: #2563eb;">📞</strong> 
+                            <a href="tel:6477875942" style="color: #2563eb; text-decoration: none; font-weight: 600;">(647) 787-5942</a>
+                        </p>
+                        <p style="margin: 8px 0; font-size: 16px;">
+                            <strong style="color: #2563eb;">📧</strong> 
+                            <a href="mailto:amasarpong206@gmail.com" style="color: #2563eb; text-decoration: none; font-weight: 600;">amasarpong206@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Footer -->
+                <div style="background: #1f2937; padding: 30px; text-align: center;">
+                    <p style="color: #9ca3af; margin: 0 0 10px 0; font-size: 14px; font-weight: 600;">Pure Gold Solutions</p>
+                    <p style="color: #6b7280; margin: 0; font-size: 13px;">Calgary's Premier Mobile Cleaning Service</p>
+                    <p style="color: #6b7280; margin: 15px 0 0 0; font-size: 12px;">Car Detailing • Home Cleaning • Event Services</p>
                 </div>
             </div>
         </body>
