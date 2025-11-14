@@ -450,6 +450,15 @@ const AdminDashboard = () => {
           </div>
         </div>
       </div>
+
+      {/* Email Modal */}
+      {selectedBooking && (
+        <EmailModal 
+          isOpen={emailModalOpen}
+          onClose={() => setEmailModalOpen(false)}
+          customer={selectedBooking}
+        />
+      )}
     </div>
   );
 };
