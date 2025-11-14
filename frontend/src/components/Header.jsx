@@ -54,7 +54,7 @@ const Header = () => {
             </div>
             <Button 
               onClick={() => scrollToSection('booking')} 
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Book Now
             </Button>
