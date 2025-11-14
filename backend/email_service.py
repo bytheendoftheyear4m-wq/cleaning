@@ -55,13 +55,20 @@ class EmailService:
             logger.info('Customer email not provided, skipping confirmation email')
             return
 
-        subject = 'Booking Confirmed - Pure Gold Solutions'
+        subject = '✓ Your Booking is Confirmed - Pure Gold Solutions'
         html_content = f"""
         <html>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-            <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-                <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
-                    <h1 style="color: white; margin: 0;">Booking Confirmed!</h1>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f3f4f6;">
+            <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+                <!-- Header with Logo and Gradient -->
+                <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); padding: 40px 20px; text-align: center; border-radius: 0;">
+                    <img src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg" alt="Pure Gold Solutions" style="max-width: 120px; height: auto; margin-bottom: 20px; background: white; padding: 10px; border-radius: 10px;" />
+                    <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Booking Confirmed!</h1>
+                    <p style="color: #bfdbfe; margin: 10px 0 0 0; font-size: 16px;">We're excited to serve you</p>
                 </div>
                 
                 <div style="background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px;">
