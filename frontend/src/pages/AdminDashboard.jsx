@@ -42,7 +42,27 @@ const AdminDashboard = () => {
   const fetchBookings = async () => {
     try {
       const response = await axios.get(`${API}/bookings`);
-      setBookings(response.data);
+      const newBookings = response.data;
+      
+      // Check for new bookings
+      if (lastBookingCount > 0 && newBookings.length > lastBookingCount) {
+        const newBookingsCount = newBookings.length - lastBookingCount;
+        setShowNotification(true);
+        toast({
+          title: '🔔 New Booking Alert!',
+          description: `You have ${newBookingsCount} new booking${newBookingsCount > 1 ? 's' : ''}!`,
+        });
+        // Play notification sound (optional)
+        if ('Notification' in window && Notification.permission === 'granted') {
+          new Notification('Pure Gold Solutions', {
+            body: `New booking received!`,
+            icon: 'https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/iusyof5u_pure%20gold.jpg'
+          });
+        }
+      }
+      
+      setLastBookingCount(newBookings.length);
+      setBookings(newBookings);
     } catch (error) {
       toast({
         title: 'Error',
@@ -53,6 +73,13 @@ const AdminDashboard = () => {
       setLoading(false);
     }
   };
+
+  // Request notification permission on mount
+  useEffect(() => {
+    if ('Notification' in window && Notification.permission === 'default') {
+      Notification.requestPermission();
+    }
+  }, []);
 
   const filterBookings = () => {
     let filtered = [...bookings];
