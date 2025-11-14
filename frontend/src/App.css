@@ -6,6 +6,15 @@
     min-height: 100vh;
 }
 
+/* Hide Emergent watermark */
+#emergent-badge,
+a[href*="emergent.sh"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 /* Professional transitions for interactive elements */
 button, a, input, select, textarea {
     transition-property: all;
