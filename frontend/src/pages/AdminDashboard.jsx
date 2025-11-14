@@ -469,7 +469,25 @@ const AdminDashboard = () => {
               </Card>
             )}
           </div>
-        </div>
+            </div>
+          </TabsContent>
+
+          {/* Calendar View */}
+          <TabsContent value="calendar">
+            <BookingCalendar 
+              bookings={bookings} 
+              onSelectEvent={setSelectedBooking}
+            />
+          </TabsContent>
+
+          {/* Booked Times List View */}
+          <TabsContent value="schedule">
+            <BookedTimesList 
+              bookings={bookings}
+              onSelectBooking={setSelectedBooking}
+            />
+          </TabsContent>
+        </Tabs>
       </div>
 
       {/* Email Modal */}
