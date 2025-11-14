@@ -288,12 +288,21 @@ const AdminDashboard = () => {
           </CardContent>
         </Card>
 
-        {/* Bookings List */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">
-              Bookings ({filteredBookings.length})
-            </h2>
+        {/* Tabs for different views */}
+        <Tabs defaultValue="list" className="mb-6">
+          <TabsList className="grid w-full max-w-md grid-cols-3">
+            <TabsTrigger value="list">List View</TabsTrigger>
+            <TabsTrigger value="calendar">Calendar</TabsTrigger>
+            <TabsTrigger value="schedule">Booked Times</TabsTrigger>
+          </TabsList>
+
+          {/* List View */}
+          <TabsContent value="list">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold text-gray-900 mb-4">
+                  Bookings ({filteredBookings.length})
+                </h2>
             {filteredBookings.length === 0 ? (
               <Card className="border-0 shadow-lg">
                 <CardContent className="p-8 text-center">
