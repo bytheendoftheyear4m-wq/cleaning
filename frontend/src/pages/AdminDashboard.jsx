@@ -176,6 +176,14 @@ const AdminDashboard = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              {showNotification && (
+                <div className="relative">
+                  <Bell className="w-6 h-6 text-blue-600 animate-bounce" />
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
+                    !
+                  </span>
+                </div>
+              )}
               <Button 
                 onClick={() => navigate('/')}
                 variant="outline"
