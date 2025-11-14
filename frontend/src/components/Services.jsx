@@ -16,15 +16,20 @@ const Services = () => {
   const homeServices = services.filter(s => s.category === 'home');
 
   return (
-    <section id="services" className="py-24 bg-gray-50">
+    <section id="services" className="py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Premium Services
+        <div className="text-center mb-16 fade-in-up">
+          <div className="inline-block mb-4">
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full">
+              Our Services
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+            Premium Cleaning Solutions
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Complete car detailing and property cleaning solutions for Calgary residents
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Professional car detailing and property cleaning services tailored for Calgary
           </p>
         </div>
 
