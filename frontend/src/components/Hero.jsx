@@ -32,9 +32,9 @@ const Hero = () => {
             <span className="text-blue-100 text-sm font-medium">Calgary's #1 Mobile Cleaning Service</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
             Premium Cleaning
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-500">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-sky-400 drop-shadow-lg">
               For Cars & Homes
             </span>
           </h1>
