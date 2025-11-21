@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { Calendar as CalendarIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card } from './ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import axios from 'axios';
@@ -233,14 +233,6 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
           </div>
         </Card>
       )}
-
-      {/* Help Button */}
-      <button
-        type="button"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-200 hover:scale-110 z-50"
-      >
-        <MessageCircle className="w-6 h-6" />
-      </button>
     </div>
   );
 };
