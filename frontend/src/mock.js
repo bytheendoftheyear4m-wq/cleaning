@@ -71,7 +71,7 @@ export const services = [
     category: 'home',
     title: 'New Home Cleaning',
     description: 'Move-in/move-out deep cleaning to make your new space spotless and ready.',
-    price: 'From $249',
+    price: 'From $174 (30% OFF)',
     features: ['Deep Clean All Areas', 'Cabinet Interior Clean', 'Appliance Cleaning', 'Baseboard & Trim', 'Window & Sill Cleaning'],
     image: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg'
   }
