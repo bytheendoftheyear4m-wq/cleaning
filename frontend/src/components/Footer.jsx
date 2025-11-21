@@ -1,6 +1,8 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
+const LOGO_URL = "https://customer-assets.emergentagent.com/job_038f5287-0ae4-4474-bffb-d48d321d9405/artifacts/rbirf40v_WhatsApp%20Image%202025-11-21%20at%201.10.29%20AM.jpeg";
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -10,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img
-                src="/logo.png"
+                src={LOGO_URL}
                 alt="Golden Touch Cleaning Services"
                 className="h-20 w-auto object-contain brightness-110"
               />

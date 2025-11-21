@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Menu, X, Phone, MapPin } from 'lucide-react';
 import { Button } from './ui/button';
 
+const LOGO_URL = "https://customer-assets.emergentagent.com/job_038f5287-0ae4-4474-bffb-d48d321d9405/artifacts/rbirf40v_WhatsApp%20Image%202025-11-21%20at%201.10.29%20AM.jpeg";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -20,7 +22,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img
-              src="/logo.png"
+              src={LOGO_URL}
               alt="Golden Touch Cleaning Services"
               className="h-16 w-auto object-contain"
             />
