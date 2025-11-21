@@ -53,7 +53,7 @@ export const services = [
     category: 'home',
     title: 'Event Cleaning',
     description: 'Pre and post-event cleaning services for parties, gatherings, and special occasions.',
-    price: 'From $199',
+    price: 'From $139 (30% OFF)',
     features: ['Pre-Event Setup Clean', 'Post-Event Cleanup', 'Floor & Surface Cleaning', 'Trash Removal', 'Full Restoration'],
     image: 'https://images.unsplash.com/photo-1747659354528-b534bcd71aea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxjbGVhbmluZyUyMGVxdWlwbWVudHxlbnwwfHx8fDE3NjMwMTEwMzl8MA&ixlib=rb-4.1.0&q=85'
   },
