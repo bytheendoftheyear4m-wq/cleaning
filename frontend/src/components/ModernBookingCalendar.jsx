@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar as CalendarIcon, Clock, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 import { Card } from './ui/card';
-import { Button } from './ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import axios from 'axios';
 import moment from 'moment';
 
@@ -13,10 +13,10 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [availableSlots, setAvailableSlots] = useState([]);
   const [bookedSlots, setBookedSlots] = useState({});
+  const [selectedTimeId, setSelectedTimeId] = useState('');
 
   // Time slots configuration
   const timeSlots = [
-    { id: '1', label: 'All day', time: 'All day', capacity: 7 },
     { id: '2', label: '8:00 am - 9:30 am', time: '8:00 AM', capacity: 7 },
     { id: '3', label: '10:30 am - 12:00 pm', time: '10:30 AM', capacity: 7 },
     { id: '4', label: '1:00 pm - 2:30 pm', time: '1:00 PM', capacity: 7 },
@@ -31,6 +31,7 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
   useEffect(() => {
     if (selectedDate) {
       calculateAvailability(selectedDate);
+      setSelectedTimeId('');
     }
   }, [selectedDate, bookedSlots]);
 
@@ -99,8 +100,11 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
     setSelectedDate(date);
   };
 
-  const handleSlotSelect = (slot) => {
-    if (slot.available <= 0 || !selectedDate) return;
+  const handleTimeChange = (slotId) => {
+    setSelectedTimeId(slotId);
+    const slot = availableSlots.find((s) => s.id === slotId);
+    if (!slot || slot.available <= 0 || !selectedDate) return;
+
     onSelectSlot({
       date: selectedDate.format('YYYY-MM-DD'),
       time: slot.time,
@@ -125,7 +129,8 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
             <ChevronLeft className="w-6 h-6" />
           </button>
 
-          <h2 className="text-2xl font-bold tracking-wider">
+          <h2 className="text-2xl font-bold tracking-wider flex items-center gap-2">
+            <CalendarIcon className="w-5 h-5" />
             {currentMonth.format('MMMM YYYY').toUpperCase()}
           </h2>
 
@@ -185,37 +190,45 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
         </div>
       </Card>
 
-      {/* Selected Date & Available Slots */}
+      {/* Selected Date & Time dropdown */}
       {selectedDate && (
         <Card className="mt-6 border-0 shadow-xl">
-          <div className="p-6">
-            <h3 className="text-2xl font-bold text-center text-gray-900 mb-6">
+          <div className="p-6 space-y-4">
+            <h3 className="text-2xl font-bold text-center text-gray-900">
               {selectedDate.format('MMMM D, YYYY')}
             </h3>
 
-            <div className="space-y-3">
-              {availableSlots.map((slot) => (
-                <button
-                  key={slot.id}
-                  type="button"
-                  onClick={() => handleSlotSelect(slot)}
-                  disabled={slot.available <= 0}
-                  className={`
-                    w-full p-4 rounded-xl text-center transition-all duration-200
-                    ${slot.available > 0
-                      ? 'bg-green-500 hover:bg-green-600 text-white cursor-pointer shadow-md hover:shadow-lg transform hover:-translate-y-0.5'
-                      : 'bg-gray-300 text-gray-600 cursor-not-allowed'}
-                  `}
-                >
-                  <div className="font-bold text-lg mb-1">Spark Service</div>
-                  <div className="text-sm font-semibold">{slot.label}</div>
-                  <div className="text-xs mt-1 uppercase tracking-wide">
-                    {slot.available > 0
-                      ? `${slot.available} SPACES AVAILABLE`
-                      : 'FULLY BOOKED'}
-                  </div>
-                </button>
-              ))}
+            <div className="max-w-md mx-auto w-full space-y-2">
+              <p className="text-sm font-medium text-gray-700">Select a time</p>
+              <Select
+                value={selectedTimeId}
+                onValueChange={handleTimeChange}
+                disabled={availableSlots.every((slot) => slot.available <= 0)}
+              >
+                <SelectTrigger>
+                  <SelectValue
+                    placeholder={
+                      availableSlots.every((slot) => slot.available <= 0)
+                        ? 'No time slots available for this date'
+                        : 'Choose a time slot'
+                    }
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  {availableSlots.map((slot) => (
+                    <SelectItem
+                      key={slot.id}
+                      value={slot.id}
+                      disabled={slot.available <= 0}
+                    >
+                      {slot.label}{' '}
+                      {slot.available <= 0
+                        ? '(Fully booked)'
+                        : `(${slot.available} spaces available)`}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </Card>
