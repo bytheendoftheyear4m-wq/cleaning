@@ -25,7 +25,7 @@ export const services = [
     category: 'car',
     title: 'Premium Full Detail',
     description: 'Complete interior and exterior detailing for showroom-quality results.',
-    price: 'From $149',
+    price: 'From $104 (30% OFF)',
     features: ['Full Exterior Detail', 'Complete Interior Detail', 'Engine Bay Cleaning', 'Paint Correction', 'Ceramic Coating'],
     image: 'https://images.unsplash.com/photo-1620584898989-d39f7f9ed1b7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxjYXIlMjBkZXRhaWxpbmd8ZW58MHx8fHwxNzYzMDEwNTIwfDA&ixlib=rb-4.1.0&q=85'
   },
