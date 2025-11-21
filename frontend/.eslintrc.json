@@ -5,8 +5,8 @@
     "node": true
   },
   "extends": [
-    "eslint:recommended",
-    "@eslint/js/recommended"
+    "react-app",
+    "react-app/jest"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
