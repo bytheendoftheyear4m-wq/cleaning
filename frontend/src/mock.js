@@ -16,7 +16,7 @@ export const services = [
     category: 'car',
     title: 'Interior Detailing',
     description: 'Deep cleaning of interior surfaces, upholstery shampooing, and air freshening.',
-    price: 'From $79',
+    price: 'From $55 (30% OFF)',
     features: ['Vacuum & Shampoo', 'Dashboard Polish', 'Leather Conditioning', 'Window Interior', 'Air Freshening'],
     image: 'https://images.unsplash.com/photo-1656077885491-3922185f3932?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxjYXIlMjBpbnRlcmlvciUyMGNsZWFuaW5nfGVufDB8fHx8MTc2MzAxMDUxNXww&ixlib=rb-4.1.0&q=85'
   },
