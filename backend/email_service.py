@@ -21,7 +21,7 @@ class EmailService:
         self.smtp_pass = os.getenv('SMTP_PASS', '')
         self.business_email = os.getenv('BUSINESS_EMAIL', 'amasarpong206@gmail.com')
         self.enabled = bool(self.smtp_user and self.smtp_pass)
-        
+
         if self.enabled:
             logger.info(f'Gmail SMTP email service initialized for {self.smtp_user}')
         else:
@@ -48,9 +48,9 @@ class EmailService:
                 port=self.smtp_port,
                 username=self.smtp_user,
                 password=self.smtp_pass,
-                start_tls=True
+                start_tls=True,
             )
-            
+
             logger.info(f'Email sent successfully to {to_email}')
             return True
         except Exception as e:
@@ -74,19 +74,19 @@ class EmailService:
             <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
                 <!-- Header with Logo and Gradient -->
                 <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); padding: 40px 20px; text-align: center; border-radius: 0;">
-                    <img src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/tbkzsfdv_1000237724.jpg" alt="Golden Touch Cleaning Services" style="max-width: 180px; height: auto; margin-bottom: 20px;" />
+                    <img src="https://customer-assets.emergentagent.com/job_038f5287-0ae4-4474-bffb-d48d321d9405/artifacts/rbirf40v_WhatsApp%20Image%202025-11-21%20at%201.10.29%20AM.jpeg" alt="Golden Touch Cleaning Services" style="max-width: 180px; height: auto; margin-bottom: 20px;" />
                     <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Booking Confirmed!</h1>
                     <p style="color: #bfdbfe; margin: 10px 0 0 0; font-size: 16px;">We're excited to serve you</p>
                 </div>
-                
+
                 <!-- Main Content -->
                 <div style="padding: 40px 30px; background: #ffffff;">
                     <p style="font-size: 18px; color: #1f2937; margin: 0 0 20px 0;">Hi <strong>{booking['name']}</strong>,</p>
-                    
+
                     <p style="font-size: 16px; color: #4b5563; line-height: 1.6; margin: 0 0 30px 0;">
                         Thank you for choosing <strong>Golden Touch Cleaning Services</strong>! We're thrilled to serve you. Your booking has been confirmed and our team is ready to deliver exceptional service.
                     </p>
-                    
+
                     <!-- Customer ID Badge -->
                     <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); padding: 20px; border-radius: 12px; margin: 0 0 25px 0; text-align: center;">
                         <p style="margin: 0 0 8px 0; color: #bfdbfe; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Your Customer ID</p>
@@ -118,13 +118,13 @@ class EmailService:
                             </tr>
                         </table>
                     </div>
-                    
+
                     <!-- Payment Info -->
                     <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 20px; border-radius: 12px; margin: 0 0 30px 0; border: 2px solid #fbbf24;">
                         <p style="margin: 0; font-weight: bold; color: #92400e; font-size: 16px;">💳 Payment Information</p>
                         <p style="margin: 10px 0 0 0; color: #78350f; font-size: 14px;">Payment will be collected after service completion. We accept cash, credit cards, and e-transfer.</p>
                     </div>
-                    
+
                     <!-- What's Next -->
                     <div style="background: #f9fafb; padding: 20px; border-radius: 12px; margin: 0 0 30px 0;">
                         <h4 style="color: #1f2937; margin: 0 0 15px 0; font-size: 16px;">✨ What's Next?</h4>
@@ -134,21 +134,21 @@ class EmailService:
                             <li>Enjoy professional cleaning service!</li>
                         </ul>
                     </div>
-                    
+
                     <!-- Contact Info -->
                     <div style="text-align: center; padding: 20px 0; border-top: 2px solid #e5e7eb;">
                         <p style="color: #6b7280; margin: 0 0 15px 0; font-size: 14px;">Questions? We're here to help!</p>
                         <p style="margin: 8px 0; font-size: 16px;">
-                            <strong style="color: #2563eb;">📞</strong> 
+                            <strong style="color: #2563eb;">📞</strong>
                             <a href="tel:6477875942" style="color: #2563eb; text-decoration: none; font-weight: 600;">(647) 787-5942</a>
                         </p>
                         <p style="margin: 8px 0; font-size: 16px;">
-                            <strong style="color: #2563eb;">📧</strong> 
+                            <strong style="color: #2563eb;">📧</strong>
                             <a href="mailto:ohemenggold@gmail.com" style="color: #2563eb; text-decoration: none; font-weight: 600;">ohemenggold@gmail.com</a>
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Footer -->
                 <div style="background: #1f2937; padding: 30px; text-align: center;">
                     <p style="color: #9ca3af; margin: 0 0 10px 0; font-size: 14px; font-weight: 600;">Golden Touch Cleaning Services</p>
@@ -159,7 +159,7 @@ class EmailService:
         </body>
         </html>
         """
-        
+
         await self.send_email(booking['email'], subject, html_content)
 
     async def send_business_notification(self, booking: dict):
@@ -177,7 +177,7 @@ class EmailService:
                     <h2 style="color: white; margin: 0; font-size: 24px;">🎉 New Booking Received!</h2>
                     <p style="color: #d1fae5; margin: 10px 0 0 0;">Action required</p>
                 </div>
-                
+
                 <div style="background: #f9fafb; padding: 20px; border-radius: 8px;">
                     <h3 style="margin-top: 0;">Booking Details</h3>
                     <table style="width: 100%; border-collapse: collapse;">
@@ -198,7 +198,7 @@ class EmailService:
                             <td style="padding: 8px 0;">{booking['status']}</td>
                         </tr>
                     </table>
-                    
+
                     <h3 style="margin-top: 30px;">Customer Information</h3>
                     <table style="width: 100%; border-collapse: collapse;">
                         <tr>
@@ -227,13 +227,13 @@ class EmailService:
                         </tr>''' if booking.get('notes') else ''}
                     </table>
                 </div>
-                
+
                 <p style="margin-top: 30px; color: #6b7280; font-size: 14px;">This is an automated notification from your booking system.</p>
             </div>
         </body>
         </html>
         """
-        
+
         await self.send_email(self.business_email, subject, html_content)
 
 

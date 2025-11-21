@@ -9,8 +9,8 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_puregold-carwash/artifacts/tbkzsfdv_1000237724.jpg" 
+              <img
+                src="/logo.png"
                 alt="Golden Touch Cleaning Services"
                 className="h-20 w-auto object-contain brightness-110"
               />
@@ -25,22 +25,34 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-blue-400 transition-colors">
+                <button
+                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="hover:text-blue-400 transition-colors"
+                >
                   Our Services
                 </button>
               </li>
               <li>
-                <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-blue-400 transition-colors">
+                <button
+                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="hover:text-blue-400 transition-colors"
+                >
                   About Us
                 </button>
               </li>
               <li>
-                <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-blue-400 transition-colors">
+                <button
+                  onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="hover:text-blue-400 transition-colors"
+                >
                   Testimonials
                 </button>
               </li>
               <li>
-                <button onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-blue-400 transition-colors">
+                <button
+                  onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="hover:text-blue-400 transition-colors"
+                >
                   Book Now
                 </button>
               </li>
@@ -68,11 +80,18 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-blue-400" />
-                <a href="tel:6477875942" className="hover:text-blue-300 transition-colors">(647) 787-5942</a>
+                <a href="tel:6477875942" className="hover:text-blue-300 transition-colors">
+                  (647) 787-5942
+                </a>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-blue-400" />
-                <a href="mailto:ohemenggold@gmail.com" className="hover:text-blue-300 transition-colors">ohemenggold@gmail.com</a>
+                <a
+                  href="mailto:ohemenggold@gmail.com"
+                  className="hover:text-blue-300 transition-colors"
+                >
+                  ohemenggold@gmail.com
+                </a>
               </li>
               <li className="flex items-center space-x-2">
                 <Clock className="w-4 h-4 text-blue-400" />
@@ -86,7 +105,10 @@ const Footer = () => {
           <div className="flex items-center justify-center gap-4 mb-2">
             <p>&copy; 2025 Golden Touch Cleaning Services. All rights reserved.</p>
             <span className="text-gray-600">|</span>
-            <a href="/admin/login" className="text-blue-400 hover:text-blue-300 transition-colors">
+            <a
+              href="/admin/login"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
+            >
               Admin Portal
             </a>
           </div>
