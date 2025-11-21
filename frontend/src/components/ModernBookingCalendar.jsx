@@ -38,14 +38,14 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
     try {
       const response = await axios.get(`${API}/bookings`);
       const bookings = response.data;
-      
+
       // Group bookings by date and time
       const grouped = {};
-      bookings.forEach(booking => {
+      bookings.forEach((booking) => {
         const key = `${booking.date}-${booking.time}`;
         grouped[key] = (grouped[key] || 0) + 1;
       });
-      
+
       setBookedSlots(grouped);
     } catch (error) {
       console.error('Error fetching bookings:', error);
@@ -54,18 +54,18 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
 
   const calculateAvailability = (date) => {
     const dateStr = date.format('YYYY-MM-DD');
-    const slots = timeSlots.map(slot => {
+    const slots = timeSlots.map((slot) => {
       const key = `${dateStr}-${slot.time}`;
       const booked = bookedSlots[key] || 0;
       const available = slot.capacity - booked;
-      
+
       return {
         ...slot,
         available,
-        booked
+        booked,
       };
     });
-    
+
     setAvailableSlots(slots);
   };
 
@@ -100,12 +100,12 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
   };
 
   const handleSlotSelect = (slot) => {
-    if (slot.available <= 0) return;
+    if (slot.available <= 0 || !selectedDate) return;
     onSelectSlot({
       date: selectedDate.format('YYYY-MM-DD'),
       time: slot.time,
       dateDisplay: selectedDate.format('MMMM D, YYYY'),
-      timeSlot: slot.label
+      timeSlot: slot.label,
     });
   };
 
@@ -118,17 +118,19 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-t-2xl">
         <div className="flex items-center justify-between">
           <button
+            type="button"
             onClick={handlePrevMonth}
             className="p-2 hover:bg-white/10 rounded-lg transition-colors"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
-          
+
           <h2 className="text-2xl font-bold tracking-wider">
             {currentMonth.format('MMMM YYYY').toUpperCase()}
           </h2>
-          
+
           <button
+            type="button"
             onClick={handleNextMonth}
             className="p-2 hover:bg-white/10 rounded-lg transition-colors"
           >
@@ -142,7 +144,7 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
         <div className="p-6">
           {/* Week Days Header */}
           <div className="grid grid-cols-7 gap-2 mb-4">
-            {weekDays.map(day => (
+            {weekDays.map((day) => (
               <div
                 key={day}
                 className="text-center font-bold text-sm text-white bg-blue-900 py-2 rounded"
@@ -163,6 +165,7 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
               return (
                 <button
                   key={index}
+                  type="button"
                   onClick={() => handleDateSelect(day)}
                   disabled={isPast}
                   className={`
@@ -191,26 +194,25 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
             </h3>
 
             <div className="space-y-3">
-              {availableSlots.map(slot => (
+              {availableSlots.map((slot) => (
                 <button
                   key={slot.id}
+                  type="button"
                   onClick={() => handleSlotSelect(slot)}
                   disabled={slot.available <= 0}
                   className={`
                     w-full p-4 rounded-xl text-center transition-all duration-200
-                    ${slot.available > 0 
-                      ? 'bg-green-500 hover:bg-green-600 text-white cursor-pointer shadow-md hover:shadow-lg transform hover:-translate-y-0.5' 
-                      : 'bg-gray-300 text-gray-600 cursor-not-allowed'
-                    }
+                    ${slot.available > 0
+                      ? 'bg-green-500 hover:bg-green-600 text-white cursor-pointer shadow-md hover:shadow-lg transform hover:-translate-y-0.5'
+                      : 'bg-gray-300 text-gray-600 cursor-not-allowed'}
                   `}
                 >
                   <div className="font-bold text-lg mb-1">Spark Service</div>
                   <div className="text-sm font-semibold">{slot.label}</div>
                   <div className="text-xs mt-1 uppercase tracking-wide">
-                    {slot.available > 0 
+                    {slot.available > 0
                       ? `${slot.available} SPACES AVAILABLE`
-                      : 'FULLY BOOKED'
-                    }
+                      : 'FULLY BOOKED'}
                   </div>
                 </button>
               ))}
@@ -220,7 +222,10 @@ const ModernBookingCalendar = ({ onSelectSlot }) => {
       )}
 
       {/* Help Button */}
-      <button className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-200 hover:scale-110 z-50">
+      <button
+        type="button"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-200 hover:scale-110 z-50"
+      >
         <MessageCircle className="w-6 h-6" />
       </button>
     </div>
