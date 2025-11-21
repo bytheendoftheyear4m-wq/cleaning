@@ -7,7 +7,7 @@ export const services = [
     category: 'car',
     title: 'Exterior Wash & Wax',
     description: 'Complete exterior cleaning with premium hand wash, foam bath, and protective wax coating.',
-    price: 'From $59',
+    price: 'From $41 (30% OFF)',
     features: ['Hand Wash', 'Foam Bath', 'Tire Shine', 'Protective Wax', 'Window Cleaning'],
     image: 'https://images.unsplash.com/photo-1624884269715-70759892cd29?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHxjYXIlMjBpbnRlcmlvciUyMGNsZWFuaW5nfGVufDB8fHx8MTc2MzAxMDUxNXww&ixlib=rb-4.1.0&q=85'
   },
