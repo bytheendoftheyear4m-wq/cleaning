@@ -34,7 +34,7 @@ export const services = [
     category: 'car',
     title: 'Engine Bay Cleaning',
     description: 'Professional cleaning and degreasing of engine compartment.',
-    price: 'From $49',
+    price: 'From $34 (30% OFF)',
     features: ['Engine Degreasing', 'Component Cleaning', 'Protective Dressing', 'Detailed Inspection'],
     image: 'https://images.unsplash.com/photo-1761312834150-4beefff097a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjB3YXNofGVufDB8fHx8MTc2MzAxMDQ4MHww&ixlib=rb-4.1.0&q=85'
   },
