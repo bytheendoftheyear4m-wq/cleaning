@@ -270,11 +270,17 @@ metadata:
 
 test_plan:
   current_focus:
-    - "All backend API endpoints tested and working"
+    - "Homepage Loading and Navigation"
+    - "Booking Form Customer Details"
+    - "ModernBookingCalendar Integration"
+    - "Booking Submission Flow"
+    - "Admin Login and Dashboard"
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
   - agent: "testing"
     message: "Comprehensive backend testing completed successfully. All 8 core API functionalities tested and working correctly. Fixed minor issues: 1) Moved logger configuration to top of server.py to prevent undefined logger errors, 2) Fixed status update endpoint to accept proper JSON body format. Email service correctly shows disabled status in test environment. All CRUD operations, error handling, and service mappings working perfectly. Backend is production-ready."
+  - agent: "testing"
+    message: "Starting frontend testing for Golden Touch Cleaning Services booking flow. Will test: 1) Homepage loading and navigation, 2) Booking form customer details, 3) ModernBookingCalendar integration, 4) Booking submission with validation, 5) Admin login and dashboard integration. Backend URL configured as: https://cleanbooking-app.preview.emergentagent.com"
